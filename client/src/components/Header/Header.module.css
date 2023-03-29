@@ -1,0 +1,144 @@
+.header {
+    padding: 16px;
+    position: sticky;
+    top: 0px;
+    border: 2px solid grey;
+    background-color: #A6DDFC;
+    z-index: 1;
+}
+
+.main-header {
+    display: flex;
+}
+
+.main-header h2 {
+    margin-left: 120px;
+}
+
+/* ------- Navigation -------------*/
+
+.main-header .navigation {
+    margin: auto;
+}
+
+.navigation .nav-list {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item a:hover {
+    color: blueviolet;
+    text-decoration: underline;
+}
+
+.main-header .nav-bar {
+    display: none;
+}
+
+/*------------- User ------------------*/
+
+.user {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+}
+
+.user span:first-of-type {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.user span:last-of-type {
+    text-align: center;
+}
+
+/*--------------- Hidden Nav -------------*/
+
+.hidden-nav {
+    display: none;
+}
+
+/*---------- Resp ------------*/
+
+@media (max-width: 1270px) {
+    .main-header h2 {
+        margin-left: 0px;
+    }
+
+    .user {
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 1070px) {
+    .main-header {
+        margin-bottom: 16px;
+    }
+
+    .main-header .navigation {
+        display: none;
+    }
+
+    .main-header .nav-bar {
+        display: inline-block;
+        margin: auto;
+        position: sticky;
+        top: 0px;
+    }
+
+    .main-header .nav-bar i {
+        width: 70px;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .hidden-nav {
+        /* display: block; */
+        width: 100%;
+        background-color: #D0D0D7;
+    }
+
+    .nav-list .nav-item {
+        margin: auto;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 610px) {
+    .main-header {
+        display: block;
+        text-align: center;
+    }
+
+    .header h2 {
+        margin-bottom: 40px;
+    }
+
+    .header .nav-bar {
+        margin-right: 100px;
+    }
+
+    .user {
+        display: inline-block;
+    }
+
+    .user span:first-of-type {
+        margin-right: 30px;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 400px) {
+    .header .nav-bar {
+        margin-right: 40px;
+    }
+}

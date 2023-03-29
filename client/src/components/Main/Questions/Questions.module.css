@@ -1,0 +1,138 @@
+#question {
+    padding: 0px 100px;
+    margin-bottom: 100px;
+}
+
+#question>h2 {
+    text-align: center;
+    font-size: 48px;
+}
+
+#question>p {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 80px;
+}
+
+#question a {
+    color: black;
+}
+
+#question a:hover {
+    text-decoration: none;
+}
+
+#question .card {
+    display: flex;
+    margin-bottom: 60px;
+}
+
+#question .card .title {
+    margin-right: auto;
+    text-shadow: 5px 5px 5px gray;
+}
+
+#question .card .title h2 {
+    font-size: 46px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+#question .card .title p {
+    font-size: 20px;
+}
+
+#question .img {
+    padding-left: 10px;
+}
+
+.more-question {
+    margin-bottom: 50px;
+}
+
+.more-question .question-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+.more-question .question-list .item {
+    width: 15%;
+}
+
+.more-question .question-list .item h3 {
+    font-style: italic;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.more-question .question-list .item p {
+    margin-bottom: 16px;
+}
+
+#question>div:last-of-type {
+    text-align: right;
+    text-transform: uppercase;
+}
+
+#question>div:last-of-type a {
+    color: blueviolet;
+}
+
+/*---------- Resp ------------*/
+
+@media (max-width: 1070px) {
+    .more-question .question-list .item {
+        width: 25%;
+    }
+}
+
+@media (max-width: 890px) {
+    #question .card {
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 700px) {
+    .more-question .question-list .item {
+        width: 35%;
+    }
+}
+
+@media (max-width: 610px) {
+    #question {
+        padding: 0px 78px;
+    }
+
+    #question>h2 {
+        font-size: 38px;
+    }
+
+    #question>p {
+        font-size: 22px;
+    }
+
+    #question .card .title h2 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 510px) {
+    #question>h2 {
+        font-size: 28px;
+    }
+
+    #question>p {
+        font-size: 20px;
+    }
+
+    #question .card .title h2 {
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    .more-question {
+        display: none;
+    }
+}

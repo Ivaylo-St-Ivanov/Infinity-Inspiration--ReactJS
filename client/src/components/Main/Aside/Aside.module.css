@@ -1,0 +1,20 @@
+.aside {
+    background-color: transparent;
+    width: 100px;
+    position: sticky;
+    top: 460px;
+}
+
+.aside ul li {
+    padding: 5px;
+    text-align: center;
+}
+
+.aside ul li a i {
+    color: blueviolet;
+    font-size: 30px;
+}
+
+.aside ul li a i:hover {
+    color: gray;
+}

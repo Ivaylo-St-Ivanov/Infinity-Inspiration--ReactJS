@@ -1,0 +1,103 @@
+.login {
+    display: flex;
+}
+
+.login .info {
+    width: 40%;
+    padding: 50px 80px;
+    color: gray;
+}
+
+.login .info a {
+    color: gray;
+}
+
+.login .info h2 {
+    margin: 40px 0px 100px 0px;
+}
+
+.login .info h2 a {
+    color: black;
+}
+
+.login .info>span:first-of-type {
+    font-size: 28px;
+    font-weight: bolder;
+    margin-bottom: 50px;
+    display: block;
+}
+
+.forgot-pass {
+    margin-bottom: 30px;
+}
+
+.forgot-pass a {
+    display: block;
+    text-align: right;
+    /* !!! Ръчичката на мишката е активна на целия ред !!! */
+}
+
+.info ul {
+    display: flex;
+    margin-top: 10px;
+}
+
+.info ul li {
+    margin-right: 16px;
+}
+
+.info ul li a {
+    font-size: 24px;
+}
+
+.login .info ul li a:hover {
+    color: blueviolet;
+}
+
+.login-img {
+    width: 60%;
+    height: auto;
+}
+
+.login-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*---------- Resp ------------*/
+
+@media (max-width: 1270px) {
+    .login .info {
+        padding: 40px 50px;
+    }
+}
+
+@media (max-width: 1070px) {
+    .login .info {
+        width: 50%;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 890px) {
+    .login .info {
+        width: 60%;
+    }
+}
+
+@media (max-width: 610px) {
+    .login .info h2 {
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 510px) {
+    .login .info {
+        width: 100%;
+    }
+
+    .login-img {
+        display: none;
+    }
+}

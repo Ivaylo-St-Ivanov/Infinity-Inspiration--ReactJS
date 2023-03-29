@@ -1,0 +1,108 @@
+#persons {
+    padding: 0px 100px;
+}
+
+#persons h2 {
+    text-align: center;
+    font-size: 48px;
+}
+
+#persons p {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 80px;
+}
+
+#persons .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+#persons .cards .card {
+    width: 15%;
+}
+
+#persons .cards .card div {
+    height: 168px;
+}
+
+#persons .cards .card div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#persons .cards .card div img:hover {
+    cursor: pointer;
+}
+
+#persons .cards .card a:last-of-type {
+    display: block;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#persons .cards .card a:hover {
+    text-decoration: underline;
+}
+
+#persons>div:last-of-type {
+    text-align: right;
+}
+
+#persons>div:last-of-type a {
+    color: blueviolet;
+}
+
+#persons>div:last-of-type a:hover {
+    text-decoration: none;
+}
+
+/*---------- Resp ------------*/
+
+@media (max-width: 1270px) {
+    #persons .cards .card {
+        width: 20%;
+    }
+}
+
+@media (max-width: 1070px) {
+    #persons .cards .card {
+        width: 25%;
+    }
+}
+
+@media (max-width: 890px) {
+    #persons .cards .card {
+        width: 40%;
+    }
+}
+
+@media (max-width: 610px) {
+    #persons {
+        padding: 0px 50px;
+    }
+
+    #persons h2 {
+        font-size: 38px;
+    }
+
+    #persons p {
+        font-size: 18px;
+    }
+
+    #persons .cards .card {
+        width: 50%;
+    }
+}
+
+@media (max-width: 430px) {
+    #persons h2 {
+        font-size: 30px;
+    }
+}

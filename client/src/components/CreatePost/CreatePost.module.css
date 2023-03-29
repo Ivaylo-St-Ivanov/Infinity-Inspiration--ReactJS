@@ -1,0 +1,66 @@
+
+
+/*=============== Create & Edit =============*/
+
+.create,
+.edit {
+    display: flex;
+}
+
+.create .img,
+.edit .img {
+    width: 50%;
+    height: auto;
+}
+
+.create .img img,
+.edit .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.edit .img {
+    margin-left: auto;
+}
+
+.create .form-create-edit,
+.edit .form-create-edit {
+    padding: 50px 80px;
+}
+
+.create .form-create-edit h2,
+.edit .form-create-edit h2 {
+    margin-bottom: 20px;
+}
+
+.create-form input,
+.create-form textarea,
+.edit-form input,
+.edit-form textarea {
+    width: 100%;
+    margin: 10px 0px 20px 0px;
+}
+
+.create-form input:hover,
+.create-form textarea:hover,
+.edit-form input:hover,
+.edit-form textarea:hover {
+    border: 1px solid blueviolet;
+}
+
+/*---------- Resp ------------*/
+
+@media (max-width: 610px) {
+    .create .img,
+    .edit .img {
+        display: none;
+    }
+}
+
+@media (max-width: 510px) {
+    .create .form-create-edit,
+    .edit .form-create-edit {
+        padding: 50px;
+    }
+}

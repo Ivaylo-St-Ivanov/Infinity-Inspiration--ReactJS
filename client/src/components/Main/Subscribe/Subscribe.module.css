@@ -1,0 +1,58 @@
+.subscribe {
+    padding: 50px 100px;
+    display: flex;
+
+}
+
+.subscribe .img {
+    width: 50%;
+    margin-right: 30px;
+}
+
+.subscribe .input {
+    width: 50%;
+    padding-top: 50px;
+}
+
+.subscribe .input span {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.subscribe .input input {
+    width: 70%;
+    border: 2px solid black;
+}
+
+.subscribe .input button {
+    background-color: black;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/*---------- Resp ------------*/
+
+@media (max-width: 970px) {
+    .subscribe .input input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 750px) {
+    .subscribe {
+        flex-wrap: wrap;
+        padding-right: 68px;
+    }
+
+    .subscribe .img {
+        width: 100%;
+        margin-right: 30px;
+    }
+    
+    .subscribe .input {
+        width: 100%;
+        padding-top: 50px;
+    }
+}

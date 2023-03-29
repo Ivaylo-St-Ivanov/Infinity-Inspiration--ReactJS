@@ -1,0 +1,115 @@
+@import "https://use.fontawesome.com/releases/v5.10.2/css/all.css";
+
+.logo i {
+    font-size: 34px;
+    color: blueviolet;
+    border: 4px solid black;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.logo a {
+    font-size: 32px;
+    font-style: italic;
+    color: black;
+}
+
+/* ------- Buttons -------------*/
+
+.btn {
+    font-size: 20px;
+    padding: 0px 20px;
+    border: 1px solid blueviolet;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-nav {
+    margin-right: 70px;
+    padding-top: 8px;
+}
+
+.btn-nav:hover,
+.btn-challenge:hover,
+.btn-create:hover {
+    background-color: #D0D0D7;
+    box-shadow: unset;
+}
+
+.btn-challenge {
+    background-color: #A6DDFC;
+    padding: 10px 20px;
+    border: 4px solid blueviolet;
+    border-radius: 16px;
+}
+
+.btn-create {
+    padding: 8px 30px;
+    box-shadow: 8px 8px 8px lightgray;
+}
+
+.buttons {
+    margin-bottom: 30px;
+}
+
+.buttons button {
+    all: unset;
+    border: 2px solid black;
+    padding: 6px 24px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.buttons button:hover {
+    box-shadow: 6px 8px 20px lightgray;
+}
+
+.buttons a {
+    margin-left: 10px;
+}
+
+/* ------------ Login & Register forms --------- */
+
+.anchor:hover {
+    text-decoration: none;
+}
+
+.form input {
+    width: 100%;
+    margin: 10px 0px 20px 0px;
+}
+
+.form input:hover {
+    border: 1px solid blueviolet;
+}
+
+/*--------------- Register -----------*/
+
+a {
+    color: black;
+}
+
+/* --------------------------- */
+/*---------- Resp ------------*/
+
+@media (max-width: 1270px) {
+    .btn-nav {
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 610px) {
+    .btn-nav {
+        padding-bottom: 10px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+    }
+}

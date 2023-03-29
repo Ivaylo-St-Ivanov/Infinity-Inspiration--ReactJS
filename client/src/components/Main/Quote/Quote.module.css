@@ -1,0 +1,26 @@
+.quote {
+    padding: 0px 100px;
+}
+
+.quote blockquote {
+    text-align: center;
+    padding: 70px 0px;
+}
+
+.quote blockquote p {
+    font-size: 22px;
+    font-style: italic;
+    text-shadow: 5px 5px 5px gray;
+}
+
+.quote blockquote hr {
+    width: 50%;
+}
+
+/*---------- Resp ------------*/
+
+@media (max-width: 610px) {
+    .quote {
+        padding: 0px 50px;
+    }
+}

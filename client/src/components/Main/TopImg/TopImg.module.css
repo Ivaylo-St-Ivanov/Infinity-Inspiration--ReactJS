@@ -1,0 +1,90 @@
+.top-img-container {
+    height: 80vh;
+    position: relative;
+    z-index: 2;
+}
+
+.top-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.top-img-container .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.top-img-container .title {
+    position: absolute;
+    top: 190px;
+    right: 70px;
+    color: #fff;
+}
+
+.title h1 {
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.title span {
+    font-size: 32px;
+}
+
+/*---------- Resp ------------*/
+
+@media (max-width: 1070px) {
+    .top-img-container {
+        height: 70vh;
+    }
+}
+
+@media (max-width: 700px) {
+    .title h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 610px) {
+    .top-img-container {
+        height: 60vh;
+    }
+
+    .title h1 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 510px) {
+    .title h1 {
+        font-size: 28px;
+    }
+
+    .title span {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 430px) {
+    .title h1 {
+        font-size: 24px;
+    }
+
+    .title span {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 380px) {
+    .title h1 {
+        font-size: 20px;
+    }
+
+    .title span {
+        font-size: 20px;
+    }
+}
