@@ -1,5 +1,9 @@
-const request = async (method, url, data, token) => {
+const request = async (method, url, data) => {
     const options = {};
+    
+    const user = localStorage.getItem('auth');
+    const auth = JSON.parse(user || '{}');
+    const token = auth.accessToken;
     
     if (method !== 'GET') {
         options.method = method;

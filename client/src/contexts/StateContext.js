@@ -1,7 +1,6 @@
-import { createContext, useState, useEffect, useContext } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { UserContext } from './UserContext';
 import * as postsService from '../services/postsService';
 
 export const StateContext = createContext();
@@ -11,7 +10,6 @@ export const StateProvider = ({
 }) => {
     const navigate = useNavigate();
     const [posts, setPosts] = useState([]);
-    const { token } = useContext(UserContext);
 
     useEffect(() => {
         postsService.getAllPosts()
@@ -21,7 +19,7 @@ export const StateProvider = ({
     }, []);
 
     const onCreatePostSubmit = async (data) => {
-        const post = await postsService.createPost(data, token);
+        const post = await postsService.createPost(data);
        
         setPosts(state => [post, ...state]);
 
@@ -32,12 +30,12 @@ export const StateProvider = ({
         const result = await postsService.editPost(values._id, values);
 
         setPosts(state => state.map(x => x._id === values._id ? result : x));
-
+        
         navigate(`/catalog/${values._id}`);
     };
 
     const onDelete = async (postId) => {
-        await postsService.deletePost(postId, token);
+        await postsService.deletePost(postId);
 
         setPosts(state => state.filter(x => x._id !== postId));
       

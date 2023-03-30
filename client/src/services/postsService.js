@@ -15,8 +15,8 @@ export const getOnePost = async (postId) => {
     return result;
 };
 
-export const createPost = async (data, token) => {
-    const result = await request.post(baseUrl, data, token);
+export const createPost = async (data) => {
+    const result = await request.post(baseUrl, data);
     
     return result;
 };
@@ -27,8 +27,8 @@ export const editPost = async (postId, data) => {
     return result;
 };
 
-export const deletePost = async (postId, token) => {
-    const result = await request.del(`${baseUrl}/` + postId, token);
+export const deletePost = async (postId) => {
+    const result = await request.del(`${baseUrl}/` + postId);
     
     return result;
 };

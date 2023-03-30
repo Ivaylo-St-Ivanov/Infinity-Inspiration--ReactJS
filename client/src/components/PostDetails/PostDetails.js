@@ -12,7 +12,7 @@ export const PostDetails = () => {
 
     const { postId } = useParams();
     const [post, setPost] = useState({});
-    const { userId } = useContext(UserContext);
+    const { isAuthenticated, userId } = useContext(UserContext);
 
     useEffect(() => {
         postsService.getOnePost(postId)
@@ -43,7 +43,10 @@ export const PostDetails = () => {
                         <div className={styles['btn-section']}>
                             <div className="buttons">
                                 <span className={styles['likes']}><i className="far fa-heart"></i> Likes: 0</span>
-                                <button className={styles['details-btn']}><i className="fas fa-thumbs-up"></i> Like</button>
+                                
+                                {isAuthenticated && (
+                                    <button className={styles['details-btn']}><i className="fas fa-thumbs-up"></i> Like</button>
+                                )}
 
                                 {isOwner && (
                                     <>
