@@ -67,11 +67,6 @@
     box-shadow: 6px 8px 20px lightgray;
 }
 
-.buttons a {
-    margin-left: 10px;
-    text-decoration: none;
-}
-
 /* ------------ Login & Register forms --------- */
 
 .anchor:hover {
