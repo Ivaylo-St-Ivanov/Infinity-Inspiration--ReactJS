@@ -22,7 +22,7 @@ export const createPost = async (data) => {
 };
 
 export const editPost = async (postId, data) => {
-    const result = await request.put(baseUrl + postId, data);
+    const result = await request.put(`${baseUrl}/` + postId, data);
 
     return result;
 };
