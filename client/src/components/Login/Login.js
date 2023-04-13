@@ -1,14 +1,14 @@
-import styles from './Login.module.css';
-
 import { useContext } from 'react';
-import { useForm } from '../../hooks/useForm';
-
-import { UserContext } from '../../contexts/UserContext';
-
 import { Link } from 'react-router-dom';
 
+import { useForm } from '../../hooks/useForm';
+import { UserContext } from '../../contexts/UserContext';
+
+import styles from './Login.module.css';
+
 export const Login = () => {
-    const { onLoginSubmit } = useContext(UserContext);
+    const { onLoginSubmit, error } = useContext(UserContext);
+
     const { values, changeHandler, onSubmit } = useForm({
         email: '',
         password: ''
@@ -44,6 +44,10 @@ export const Login = () => {
                         value={values.password}
                         onChange={changeHandler}
                     />
+
+                    {error && (
+                        <span className='error-message'>{error.message}</span>
+                    )}
 
                     <div className={styles['forgot-pass']}>
                         <a className="anchor" href="">Forgot your password?</a>

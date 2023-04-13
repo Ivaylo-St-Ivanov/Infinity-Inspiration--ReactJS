@@ -1,10 +1,10 @@
 const request = async (method, url, data) => {
     const options = {};
-    
+
     const user = localStorage.getItem('auth');
     const auth = JSON.parse(user || '{}');
     const token = auth.accessToken;
-    
+
     if (method !== 'GET') {
         options.method = method;
 
@@ -24,19 +24,23 @@ const request = async (method, url, data) => {
         };
     }
 
-    const response = await fetch(url, options);
+    try {
+        const response = await fetch(url, options);
 
-    if (response.status === 204) {
-        return {};
+        if (response.status === 204) {
+            return {};
+        }
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw result;
+        }
+
+        return result;
+    } catch (err) {
+        throw err;
     }
-
-    const result = await response.json();
-
-    if (!response.ok) {
-        throw result;
-    }
-    
-    return result;
 };
 
 export const get = request.bind(null, 'GET');

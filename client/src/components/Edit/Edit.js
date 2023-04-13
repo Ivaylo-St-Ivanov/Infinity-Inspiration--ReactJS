@@ -8,11 +8,11 @@ import * as postService from '../../services/postsService';
 import styles from '../CreatePost/CreatePost.module.css';
 
 export const Edit = () => {
-    const { onEditPostSubmit } = useContext(StateContext);
+    const { onEditPostSubmit, error } = useContext(StateContext);
 
     // const [initValues, setValues] = useState({});
     const { postId } = useParams();
-    
+
     const { values, changeHandler, onSubmit, changeValues } = useForm({
         // _id: '',
         title: '',
@@ -47,7 +47,7 @@ export const Edit = () => {
                         placeholder="Title"
                         value={values.title}
                         onChange={changeHandler}
-                        // defaultValue={initValues.title}
+                    // defaultValue={initValues.title}
                     />
                     <input
                         type="text"
@@ -56,7 +56,7 @@ export const Edit = () => {
                         placeholder="Image url"
                         value={values.imageUrl}
                         onChange={changeHandler}
-                        // defaultValue={initValues.imageUrl}
+                    // defaultValue={initValues.imageUrl}
                     />
                     <input
                         type="text"
@@ -65,7 +65,7 @@ export const Edit = () => {
                         placeholder="Author"
                         value={values.author}
                         onChange={changeHandler}
-                        // defaultValue={initValues.author}
+                    // defaultValue={initValues.author}
                     />
                     <textarea
                         id="post-content"
@@ -76,6 +76,10 @@ export const Edit = () => {
                         // defaultValue={initValues.content}
                         rows="12"
                     ></textarea>
+
+                    {error && (
+                        <span className='error-message'>{error.message}</span>
+                    )}
 
                     <div className="buttons">
                         <button type="submit">Edit</button>

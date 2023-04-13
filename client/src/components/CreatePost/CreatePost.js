@@ -6,7 +6,7 @@ import { StateContext } from '../../contexts/StateContext';
 import styles from './CreatePost.module.css';
 
 export const CreatePost = () => {
-    const { onCreatePostSubmit } = useContext(StateContext);
+    const { onCreatePostSubmit, error } = useContext(StateContext);
 
     const { values, changeHandler, onSubmit } = useForm({
         title: '',
@@ -57,6 +57,10 @@ export const CreatePost = () => {
                         placeholder="Content"
                         rows="12"
                     ></textarea>
+
+                    {error && (
+                        <span className='error-message'>{error.message}</span>
+                    )}
 
                     <div className="buttons">
                         <button type="submit">Create</button>

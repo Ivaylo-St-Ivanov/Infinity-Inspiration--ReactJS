@@ -7,7 +7,7 @@ import { UserContext } from '../../contexts/UserContext';
 import styles from './Register.module.css';
 
 export const Register = () => {
-    const { onRegisterSubmit } = useContext(UserContext);
+    const { onRegisterSubmit, error } = useContext(UserContext);
     const { values, changeHandler, onSubmit } = useForm({
         email: '',
         password: '',
@@ -56,6 +56,10 @@ export const Register = () => {
                         placeholder="************"
                         value={values['repass']}
                         onChange={changeHandler} />
+
+                    {error && (
+                        <span className='error-message'>{error.message}</span>
+                    )}
 
                     <div className="buttons">
                         <button className="login-btn">SIGN UP</button>

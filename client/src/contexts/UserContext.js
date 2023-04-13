@@ -1,45 +1,67 @@
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import * as userService from '../services/userService';
-
+import * as validation from '../services/emailValidation';
 
 export const UserContext = createContext();
 
 export const UserProvider = ({
     children,
 }) => {
-    const [user, setUser] = useLocalStorage('auth', {});
-    // const [user, setUser] = useState({});
     const navigate = useNavigate();
+    const [user, setUser] = useLocalStorage('auth', {});
+    const [error, setError] = useState(null);
 
     const onLoginSubmit = async (data) => {
         try {
-            const result = await userService.login(data);
+            if (data.email === '' || data.password === '') {
+                throw new Error('All fields are required!');
+            }
+            setError('');
 
-            setUser(result);
+            const isValid = validation.isValidEmail(data.email);
 
-            navigate('/catalog');
-        } catch (error) {
-            console.log(error.message);
+            if (isValid) {
+                const result = await userService.login(data);
+
+                setUser(result);
+
+                navigate('/catalog');
+            } else {
+                throw new Error('Invalid email address!');
+            }
+        } catch (err) {
+            setError(err);
         }
     };
 
     const onRegisterSubmit = async (data) => {
-        const { repass, ...registerData } = data;
-        if (repass !== registerData.password) {
-            return;
-        }
-
         try {
-            const result = await userService.register(registerData);
+            if (data.email === '' || data.password === '' || data.repass === '') {
+                throw new Error('All fields are required!');
+            }
+            setError('');
 
-            setUser(result);
+            const isValid = validation.isValidEmail(data.email);
 
-            navigate('/catalog');
+            if (isValid) {
+                const { repass, ...registerData } = data;
+                if (repass !== registerData.password) {
+                    throw new Error('Passwords don\'t match');
+                }
+
+                const result = await userService.register(registerData);
+
+                setUser(result);
+
+                navigate('/catalog');
+            } else {
+                throw new Error('Invalid email address!');
+            }
         } catch (error) {
-            console.log(error);
+            setError(error);
         }
     };
 
@@ -56,7 +78,8 @@ export const UserProvider = ({
         userId: user._id,
         token: user.accessToken,
         userEmail: user.email,
-        isAuthenticated: !!user.accessToken
+        isAuthenticated: !!user.accessToken,
+        error
     };
 
     return (

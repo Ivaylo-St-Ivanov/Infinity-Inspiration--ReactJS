@@ -50,6 +50,7 @@
 }
 
 .buttons {
+    margin-top: 10px;
     margin-bottom: 30px;
 }
 
@@ -67,6 +68,10 @@
     box-shadow: 6px 8px 20px lightgray;
 }
 
+.buttons span {
+    margin-right: 30px;
+}
+
 /* ------------ Login & Register forms --------- */
 
 .anchor:hover {
@@ -80,6 +85,10 @@
 
 .form input:hover {
     border: 1px solid blueviolet;
+}
+
+.error-message {
+    color: red;
 }
 
 /*--------------- Register -----------*/
