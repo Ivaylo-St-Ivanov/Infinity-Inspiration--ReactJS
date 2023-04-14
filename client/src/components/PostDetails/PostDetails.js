@@ -4,27 +4,17 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
 import { StateContext } from '../../contexts/StateContext';
 import * as postsService from '../../services/postsService';
-import * as likesService from '../../services/likesService';
 
+import { Likes } from './Likes/Likes';
 import styles from './PostDetails.module.css';
 
 export const PostDetails = () => {
     const navigate = useNavigate();
     const { postId } = useParams();
     const [post, setPost] = useState({});
-    
-    const { isAuthenticated, userId } = useContext(UserContext);
+
+    const { userId } = useContext(UserContext);
     const { onDelete } = useContext(StateContext);
-
-    const [likes, setLikes] = useState('0');
-    const [isDisabled, setDisabled] = useState(false);
-
-    useEffect(() => {
-        likesService.getLikes(postId)
-            .then(result => {
-                setLikes(result.length);
-            });
-    }, [postId]);
 
     useEffect(() => {
         postsService.getOnePost(postId)
@@ -35,14 +25,6 @@ export const PostDetails = () => {
 
     const onEditClick = () => {
         navigate(`/catalog/${postId}/edit`);
-    };
-
-    const onLikeClick = async () => {
-        const newLikes = Number(likes) + 1;
-        const response = await likesService.addLike(postId, newLikes);
-
-        setLikes(response.likes);
-        setDisabled(true);
     };
 
     const onDeleteClick = () => {
@@ -66,11 +48,8 @@ export const PostDetails = () => {
 
                         <div className={styles['btn-section']}>
                             <div className="buttons">
-                                <span className={styles['likes']}><i className="far fa-heart"></i> Likes: {likes}</span>
 
-                                {isAuthenticated && !isOwner && (
-                                    <button className={styles['details-btn']} onClick={onLikeClick} disabled={isDisabled}><i className="fas fa-thumbs-up"></i> Like</button>
-                                )}
+                                <Likes postId={postId} isOwner={isOwner} />
 
                                 {isOwner && (
                                     <>

@@ -68,6 +68,11 @@
     box-shadow: 6px 8px 20px lightgray;
 }
 
+.liked i {
+    color: blueviolet;
+    font-size: 22px;
+}
+
 .buttons span {
     margin-right: 30px;
 }

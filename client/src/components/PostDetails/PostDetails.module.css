@@ -46,6 +46,10 @@
     font-weight: bold;
 }
 
+.details .content .middle .likes i {
+    color: blueviolet;
+}
+
 .details .content>p {
     margin-bottom: 50px;
 }
