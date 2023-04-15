@@ -8,6 +8,7 @@ import styles from './Register.module.css';
 
 export const Register = () => {
     const { onRegisterSubmit, error } = useContext(UserContext);
+    
     const { values, changeHandler, onSubmit } = useForm({
         email: '',
         password: '',

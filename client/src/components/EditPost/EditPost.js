@@ -7,7 +7,7 @@ import * as postService from '../../services/postsService';
 
 import styles from '../CreatePost/CreatePost.module.css';
 
-export const Edit = () => {
+export const EditPost = () => {
     const { onEditPostSubmit, error } = useContext(StateContext);
 
     // const [initValues, setValues] = useState({});

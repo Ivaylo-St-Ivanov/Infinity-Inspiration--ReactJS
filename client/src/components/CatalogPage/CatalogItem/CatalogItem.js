@@ -1,6 +1,6 @@
-import styles from '../Catalog.module.css';
-
 import { Link } from 'react-router-dom';
+
+import styles from '../CatalogPage.module.css';
 
 export const CatalogItem = ({
     _id,
