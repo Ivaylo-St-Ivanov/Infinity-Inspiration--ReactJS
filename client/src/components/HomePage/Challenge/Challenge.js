@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import styles from './Challenge.module.css';
 
 export const Challenge = () => {
@@ -8,7 +10,7 @@ export const Challenge = () => {
             <div className={styles['title']}>
                 <h1>The Future of Food Systems: Four Themes to Consider</h1>
                 <p>Here are four themes to help guide us toward a better food future.</p>
-                <a className="btn btn-challenge">Read the blog post</a>
+                <Link to='/challenge' className="btn btn-challenge">Read the blog post</Link>
             </div>
         </section>
     );

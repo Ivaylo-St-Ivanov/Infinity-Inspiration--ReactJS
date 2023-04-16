@@ -9,6 +9,19 @@
     margin-bottom: 20px;
 }
 
+#about div:last-of-type {
+    text-align: right;
+    color: blueviolet;
+}
+
+#about div:last-of-type a {
+    color: blueviolet;
+}
+
+#about div:last-of-type a:hover {
+    text-decoration: none;
+}
+
 /*---------- Resp ------------*/
 
 @media (max-width: 610px) {

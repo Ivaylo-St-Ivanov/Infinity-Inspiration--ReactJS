@@ -12,6 +12,8 @@ import { CatalogPage } from './components/CatalogPage/CatalogPage';
 import { PostDetails } from './components/PostDetails/PostDetails';
 import { EditPost } from './components/EditPost/EditPost';
 import { MessagePage } from './components/MessagePage/MessagePage';
+import { ChallengePage } from './components/HomePage/Challenge/ChallengePage/ChallengePage';
+import { AboutPage } from './components/HomePage/About/AboutPage/AboutPage';
 
 function App() {
 
@@ -29,6 +31,9 @@ function App() {
                     <Route path='/catalog' element={<CatalogPage />} />
                     <Route path='/catalog/:postId' element={<PostDetails />} />
                     <Route path='/catalog/:postId/edit' element={<EditPost />} />
+
+                    <Route path='/about-page' element={<AboutPage />} />
+                    <Route path='/challenge' element={<ChallengePage />} />
 
                     <Route path='/message' element={<MessagePage />} />
                 </Routes>

@@ -7,7 +7,7 @@ export const Navigation = () => {
         <nav className={styles['navigation']}>
             <ul className={styles['nav-list']} role="list">
                 <li className={styles['nav-item']}>
-                    <Link to="/" reloadDocument>About us</Link>
+                    <Link to="/about-page" reloadDocument>About us</Link>
                 </li>
                 <li className={styles['nav-item']}>
                     <Link to="/message">Incredible Persons</Link>
@@ -19,7 +19,7 @@ export const Navigation = () => {
                     <Link to="/catalog">Amazing Facts</Link>
                 </li>
                 <li className={styles['nav-item']}>
-                    <Link to="/message">Stories</Link>
+                    <Link to="/challenge">Challenge</Link>
                 </li>
             </ul>
         </nav>

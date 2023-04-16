@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import styles from './About.module.css';
 
 export const About = () => {
@@ -13,6 +15,12 @@ export const About = () => {
                     cumque! Asperiores inventore eum aut, velit, sequi alias ducimus commodi est consequatur odio sint
                     neque culpa ratione, laborum deleniti fugiat tempora perspiciatis. Inventore fugiat, cumque repellat
                     commodi ab aspernatur officia, distinctio aut eligendi suscipit soluta fugit?</p>
+            </div>
+
+            <div>
+                <Link to='/about-page'>
+                    Learn More <i className="fas fa-arrow-right"></i>
+                </Link>
             </div>
         </section>
     );
