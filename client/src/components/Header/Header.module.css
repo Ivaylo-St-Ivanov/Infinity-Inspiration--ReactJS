@@ -38,6 +38,11 @@
 
 .main-header .nav-bar {
     display: none;
+    cursor: pointer;
+}
+
+.main-header .nav-bar:hover {
+    color: blueviolet;
 }
 
 /*------------- User ------------------*/
@@ -55,12 +60,6 @@
 
 .user span:last-of-type {
     text-align: center;
-}
-
-/*--------------- Hidden Nav -------------*/
-
-.hidden-nav {
-    display: none;
 }
 
 /*---------- Resp ------------*/

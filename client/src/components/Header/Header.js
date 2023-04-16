@@ -1,12 +1,19 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { UserContext } from '../../contexts/UserContext';
 
+import { Navigation } from './Navigation/Navigation';
 import styles from './Header.module.css';
 
 export const Header = () => {
     const { userEmail, isAuthenticated } = useContext(UserContext);
+
+    const [isClicked, setIsClicked] = useState(false);
+
+    const onNavBarClick = () => {
+        setIsClicked(value => !value);
+    };
 
     return (
         <header className={styles['header']}>
@@ -16,27 +23,9 @@ export const Header = () => {
                     <Link to="/">Infinity Inspiration</Link>
                 </h2>
 
-                <nav className={styles['navigation']}>
-                    <ul className={styles['nav-list']} role="list">
-                        <li className={styles['nav-item']}>
-                            <Link to="/#about">About us</Link>
-                        </li>
-                        <li className={styles['nav-item']}>
-                            <a href="#persons">Incredible Persons</a>
-                        </li>
-                        <li className={styles['nav-item']}>
-                            <a href="#question">Big Questions</a>
-                        </li>
-                        <li className={styles['nav-item']}>
-                            <Link to="/catalog">Amazing Facts</Link>
-                        </li>
-                        <li className={styles['nav-item']}>
-                            <a href="#stories">Stories</a>
-                        </li>
-                    </ul>
-                </nav>
+                <Navigation />
 
-                <span className={styles['nav-bar']}>
+                <span className={styles['nav-bar']} onClick={onNavBarClick}>
                     <i className='fas fa-bars'></i>
                 </span>
 
@@ -54,27 +43,12 @@ export const Header = () => {
 
             {/* <!---------- Hidden Nav -----------> */}
 
-            <div className={styles['hidden-nav']}>
-                <nav className={styles['navigation']}>
-                    <ul className={styles['nav-list']} role="list">
-                        <li className={styles['nav-item']}>
-                            <a href="#about">About us</a>
-                        </li>
-                        <li className={styles['nav-item']}>
-                            <a href="#persons">Incredible Persons</a>
-                        </li>
-                        <li className={styles['nav-item']}>
-                            <a href="#question">Big Questions</a>
-                        </li>
-                        <li className={styles['nav-item']}>
-                            <a href="#facts">Amazing Facts</a>
-                        </li>
-                        <li className={styles['nav-item']}>
-                            <a href="#stories">Stories</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            {isClicked && (
+                <div className={styles['hidden-nav']}>
+                    
+                    <Navigation />
+                </div>
+            )}
         </header>
     );
 };

@@ -11,6 +11,7 @@ import { CreatePost } from './components/CreatePost/CreatePost';
 import { CatalogPage } from './components/CatalogPage/CatalogPage';
 import { PostDetails } from './components/PostDetails/PostDetails';
 import { EditPost } from './components/EditPost/EditPost';
+import { MessagePage } from './components/MessagePage/MessagePage';
 
 function App() {
 
@@ -28,6 +29,8 @@ function App() {
                     <Route path='/catalog' element={<CatalogPage />} />
                     <Route path='/catalog/:postId' element={<PostDetails />} />
                     <Route path='/catalog/:postId/edit' element={<EditPost />} />
+
+                    <Route path='/message' element={<MessagePage />} />
                 </Routes>
             </StateProvider>
         </UserProvider>
