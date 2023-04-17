@@ -10,7 +10,7 @@ export const Navigation = () => {
                     <Link to="/about-page" reloadDocument>About us</Link>
                 </li>
                 <li className={styles['nav-item']}>
-                    <Link to="/message">Incredible Persons</Link>
+                    <Link to="/persons-page">Incredible Persons</Link>
                 </li>
                 <li className={styles['nav-item']}>
                     <Link to="/message">Big Questions</Link>

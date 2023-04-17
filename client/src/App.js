@@ -12,14 +12,17 @@ import { CatalogPage } from './components/CatalogPage/CatalogPage';
 import { PostDetails } from './components/PostDetails/PostDetails';
 import { EditPost } from './components/EditPost/EditPost';
 import { MessagePage } from './components/MessagePage/MessagePage';
-import { ChallengePage } from './components/HomePage/Challenge/ChallengePage/ChallengePage';
 import { AboutPage } from './components/HomePage/About/AboutPage/AboutPage';
+import { PersonsPage } from './components/PersonsPage/PersonsPage';
+import { ChallengePage } from './components/HomePage/Challenge/ChallengePage/ChallengePage';
+import { PersonsProvider } from './contexts/PersonsContext';
 
 function App() {
 
     return (
         <UserProvider>
             <StateProvider>
+                <PersonsProvider>
                 <Routes>
                     <Route path='/' element={<HomePage />} />
 
@@ -33,10 +36,12 @@ function App() {
                     <Route path='/catalog/:postId/edit' element={<EditPost />} />
 
                     <Route path='/about-page' element={<AboutPage />} />
+                    <Route path='/persons-page' element={<PersonsPage />} />
                     <Route path='/challenge' element={<ChallengePage />} />
 
                     <Route path='/message' element={<MessagePage />} />
                 </Routes>
+                </PersonsProvider>
             </StateProvider>
         </UserProvider>
     );

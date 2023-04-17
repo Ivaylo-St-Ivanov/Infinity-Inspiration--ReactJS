@@ -1,8 +1,8 @@
 import { Header } from '../Header/Header';
 import { About } from './About/About';
 import { TopImg } from './TopImg/TopImg';
-import { Persons } from './Persons/Persons';
 import { Quote } from './Quote/Quote';
+import { Persons } from '../HomePage/Persons/Persons';
 import { Aside } from './Aside/Aside';
 import { Questions } from './Questions/Questions';
 import { Challenge } from './Challenge/Challenge';

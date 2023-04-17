@@ -7,3 +7,9 @@ export const getChallengePage = async () => {
 
     return result;
 };
+
+export const getAllPersons = async () => {
+    const result = await request.get(baseUrl + 'Persons');
+
+    return result;
+};
