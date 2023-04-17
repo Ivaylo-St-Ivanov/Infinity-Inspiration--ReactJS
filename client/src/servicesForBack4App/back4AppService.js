@@ -13,3 +13,17 @@ export const getAllPersons = async () => {
 
     return result;
 };
+
+export const getPersonById = async (personId) => {
+    const result = await request.get(`${baseUrl}/Persons/${personId}`);
+
+    return result;
+};
+
+// export const searchPersonByRegex = async () => {
+//     const searchQuery = encodeURIComponent(`where=${}`);
+
+//     const result = await request.get(`${baseUrl}/Persons?${searchQuery}`);
+
+//     return result;
+// };

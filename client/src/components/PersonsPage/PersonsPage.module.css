@@ -25,6 +25,13 @@
     width: 15%;
 }
 
+#persons .cards .card:hover {
+    width: 17%;
+    border: 2px solid blueviolet;
+    padding: 2px;
+    cursor: pointer;
+}
+
 #persons .cards .card div {
     height: 168px;
 }
@@ -35,20 +42,12 @@
     object-fit: cover;
 }
 
-#persons .cards .card div img:hover {
-    cursor: pointer;
-}
-
-#persons .cards .card a:last-of-type {
+#persons .cards .card .person-name {
     display: block;
     font-size: 20px;
     color: black;
     font-weight: bold;
     text-decoration: none;
-}
-
-#persons .cards .card a:hover {
-    text-decoration: underline;
 }
 
 #persons>div:last-of-type {

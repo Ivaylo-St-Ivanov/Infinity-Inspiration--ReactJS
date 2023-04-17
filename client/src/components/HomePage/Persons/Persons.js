@@ -2,8 +2,8 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import { PersonsContext } from '../../../contexts/PersonsContext';
-import { PersonItem } from '../../PersonsPage/PersonItem/PersonItem';
 
+import { PersonItem } from '../../PersonsPage/PersonItem/PersonItem';
 import styles from '../../PersonsPage/PersonsPage.module.css';
 
 export const Persons = () => {

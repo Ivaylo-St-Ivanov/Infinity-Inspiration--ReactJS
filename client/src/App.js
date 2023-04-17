@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import { UserProvider } from './contexts/UserContext';
 import { StateProvider } from './contexts/StateContext';
+import { PersonsProvider } from './contexts/PersonsContext';
 
 import { HomePage } from './components/HomePage/HomePage';
 import { Login } from './components/Login/Login';
@@ -14,8 +15,8 @@ import { EditPost } from './components/EditPost/EditPost';
 import { MessagePage } from './components/MessagePage/MessagePage';
 import { AboutPage } from './components/HomePage/About/AboutPage/AboutPage';
 import { PersonsPage } from './components/PersonsPage/PersonsPage';
+import { PersonDetails } from './components/PersonDetails/PersonDetails';
 import { ChallengePage } from './components/HomePage/Challenge/ChallengePage/ChallengePage';
-import { PersonsProvider } from './contexts/PersonsContext';
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
 
                     <Route path='/about-page' element={<AboutPage />} />
                     <Route path='/persons-page' element={<PersonsPage />} />
+                    <Route path='/persons-page/:personId' element={<PersonDetails />} />
                     <Route path='/challenge' element={<ChallengePage />} />
 
                     <Route path='/message' element={<MessagePage />} />

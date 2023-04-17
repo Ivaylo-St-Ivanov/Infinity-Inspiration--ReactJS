@@ -34,6 +34,10 @@
     margin-bottom: 10px;
 }
 
+.details .content .middle .degree {
+    text-align: center;
+}
+
 .details .content .middle .btn-section {
     display: flex;
     justify-content: space-evenly;
