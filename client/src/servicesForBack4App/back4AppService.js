@@ -21,9 +21,9 @@ export const getPersonById = async (personId) => {
 };
 
 // export const searchPersonByRegex = async () => {
-//     const searchQuery = encodeURIComponent(`where=${}`);
+//     const searchQuery = encodeURIComponent('where=');
 
-//     const result = await request.get(`${baseUrl}/Persons?${searchQuery}`);
-
+//     const result = await request.get(`${baseUrl}/Persons${searchQuery}`);
+    
 //     return result;
 // };

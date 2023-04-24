@@ -1,4 +1,4 @@
-const request = async (method, url, data) => {
+const request = async (method, url, param) => {
     const options = {
         method,
         headers: {
@@ -7,7 +7,24 @@ const request = async (method, url, data) => {
         }
     };
 
-    options.body = JSON.stringify(data);
+    if (method === 'GET') {
+        if (param) {
+            options.headers = {
+                ...options.headers,
+                'X-Parse-Master-Key': param
+            };
+        }
+    } else {
+        if (param) {
+            const data = param;
+
+            options.headers = {
+                'content-type': 'application/json'
+            };
+
+            options.body = JSON.stringify(data);
+        }
+    }
 
     try {
         const response = await fetch(url, options);
@@ -25,3 +42,4 @@ const request = async (method, url, data) => {
 };
 
 export const get = request.bind(null, 'GET');
+export const post = request.bind(null, 'POST');
