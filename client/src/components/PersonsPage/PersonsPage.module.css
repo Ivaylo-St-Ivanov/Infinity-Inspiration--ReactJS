@@ -30,6 +30,7 @@
     border: 2px solid blueviolet;
     padding: 2px;
     cursor: pointer;
+    transition: width 2s, transform 2s;
 }
 
 #persons .cards .card div {
@@ -68,17 +69,29 @@
     #persons .cards .card {
         width: 20%;
     }
+
+    #persons .cards .card:hover {
+        width: 22%;
+    }
 }
 
 @media (max-width: 1070px) {
     #persons .cards .card {
         width: 25%;
     }
+
+    #persons .cards .card:hover {
+        width: 27%;
+    }
 }
 
 @media (max-width: 890px) {
     #persons .cards .card {
         width: 40%;
+    }
+
+    #persons .cards .card:hover {
+        width: 42%;
     }
 }
 
@@ -97,6 +110,10 @@
 
     #persons .cards .card {
         width: 50%;
+    }
+
+    #persons .cards .card:hover {
+        width: 52%;
     }
 }
 
