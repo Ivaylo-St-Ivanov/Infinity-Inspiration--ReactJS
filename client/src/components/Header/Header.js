@@ -7,7 +7,7 @@ import { Navigation } from './Navigation/Navigation';
 import styles from './Header.module.css';
 
 export const Header = () => {
-    const { userEmail, isAuthenticated } = useContext(UserContext);
+    const { username, isAuthenticated } = useContext(UserContext);
 
     const [isClicked, setIsClicked] = useState(false);
 
@@ -31,7 +31,7 @@ export const Header = () => {
 
                 {isAuthenticated && (
                     <div className={styles['user']}>
-                        <span>{userEmail}</span>
+                        <span>{username}</span>
                         <span><Link to='/logout'>Logout</Link></span>
                     </div>
                 )}

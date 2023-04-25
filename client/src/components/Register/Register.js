@@ -11,6 +11,7 @@ export const Register = () => {
     
     const { values, changeHandler, onSubmit } = useForm({
         email: '',
+        username: '',
         password: '',
         repass: ''
     }, onRegisterSubmit);
@@ -40,6 +41,14 @@ export const Register = () => {
                         name="email"
                         placeholder="john@gmail.com"
                         value={values.email}
+                        onChange={changeHandler} />
+                    <label htmlFor="username">USERNAME</label>
+                    <input
+                        type="text"
+                        className="username"
+                        name="username"
+                        placeholder="john doe"
+                        value={values.username}
                         onChange={changeHandler} />
                     <label htmlFor="pass">PASSWORD</label>
                     <input

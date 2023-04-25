@@ -13,7 +13,7 @@ export const UserProvider = ({
     const navigate = useNavigate();
     const [user, setUser] = useLocalStorage('auth', {});
     const [error, setError] = useState(null);
-
+    
     const onLoginSubmit = async (data) => {
         try {
             if (data.email === '' || data.password === '') {
@@ -24,9 +24,9 @@ export const UserProvider = ({
             const isValid = validation.isValidEmail(data.email);
 
             if (isValid) {
-                const result = await userService.login(data);
-
-                setUser(result);
+                const { objectId, email, username, sessionToken } = await userService.login(data);
+                
+                setUser({ objectId, email, username, sessionToken });
 
                 navigate('/catalog');
             } else {
@@ -39,7 +39,7 @@ export const UserProvider = ({
 
     const onRegisterSubmit = async (data) => {
         try {
-            if (data.email === '' || data.password === '' || data.repass === '') {
+            if (data.email === '' || data.username === '' || data.password === '' || data.repass === '') {
                 throw new Error('All fields are required!');
             }
             setError('');
@@ -52,9 +52,12 @@ export const UserProvider = ({
                     throw new Error('Passwords don\'t match');
                 }
 
-                const result = await userService.register(registerData);
+                const { sessionToken, objectId } = await userService.register(registerData);
 
-                setUser(result);
+                const email = data.email;
+                const username = data.username;
+
+                setUser({ objectId, email, username, sessionToken });
 
                 navigate('/catalog');
             } else {
@@ -66,7 +69,7 @@ export const UserProvider = ({
     };
 
     const onLogout = async () => {
-        await userService.logout(user.accessToken);
+        await userService.logout(user.sessionToken);
 
         setUser({});
     };
@@ -75,10 +78,10 @@ export const UserProvider = ({
         onLoginSubmit,
         onRegisterSubmit,
         onLogout,
-        userId: user._id,
-        token: user.accessToken,
-        userEmail: user.email,
-        isAuthenticated: !!user.accessToken,
+        userId: user.objectId,
+        token: user.sessionToken,
+        isAuthenticated: !!user.sessionToken,
+        username: user.username,
         error
     };
 

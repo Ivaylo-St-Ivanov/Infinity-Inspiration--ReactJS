@@ -1,19 +1,19 @@
-import * as request from './requester';
+import * as request from '../servicesForBack4App/requesterBack4App';
 
-const baseUrl = 'http://localhost:3030/users';
+const baseUrl = 'https://parseapi.back4app.com';
 
 export const login = (data) => {
     return request.post(`${baseUrl}/login`, data);
 };
 
 export const register = (data) => {
-    return request.post(`${baseUrl}/register`, data);
+    return request.post(`${baseUrl}/users`, data);
 };
 
 export const logout = (token) => {
     return fetch(`${baseUrl}/logout`, {
         headers: {
-            'X-Authorization': token
+            'X-Parse-Session-Token': token
         }
     });
 };
