@@ -12,7 +12,7 @@ import styles from './CatalogPage.module.css';
 export const CatalogPage = () => {
     const { posts } = useContext(StateContext);
     const { isAuthenticated } = useContext(UserContext);
-
+    
     return (
         <>
             <Header />
@@ -31,7 +31,7 @@ export const CatalogPage = () => {
                         {posts.length === 0 && (<span className={styles['empty-catalog']}><b>There are no posts yet!</b></span>)}
 
 
-                        {posts.map(x => <CatalogItem key={x._id} {...x} />)}
+                        {posts.map(x => <CatalogItem key={x.objectId} {...x} />)}
 
                     </div>
                 </section>

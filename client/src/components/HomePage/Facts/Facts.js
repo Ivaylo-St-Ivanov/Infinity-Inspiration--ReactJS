@@ -8,14 +8,14 @@ import styles from '../../CatalogPage/CatalogPage.module.css';
 
 export const Facts = () => {
     const { posts } = useContext(StateContext);
-
-    const firstSix = posts.slice(0, 6);
-
+    
+    const firstSix = posts?.slice(0, 6);
+    
     return (
         <section id={styles['facts']}>
             <div className={styles['cards']}>
 
-                {firstSix.map(x => <CatalogItem key={x._id} {...x} />)}
+                {firstSix.map(x => <CatalogItem key={x.objectId} {...x} />)}
 
                 {posts.length === 0 && (<span className={styles['empty-catalog']}><b>There are no posts yet!</b></span>)}
 

@@ -1,35 +1,25 @@
-import * as request from './requester';
+import * as request from '../servicesForBack4App/requesterBack4App';
+import { addOwner } from './emailValidation';
 
-const baseUrl = 'http://localhost:3030/data/posts';
+const baseUrl = 'https://parseapi.back4app.com/classes/Posts';
 
 export const getAllPosts = async () => {
-    const result = await request.get(baseUrl);
-    const posts = Object.values(result);
-   
-    return posts;
+    return await request.get(baseUrl);
 };
 
 export const getOnePost = async (postId) => {
-    const result = await request.get(`${baseUrl}/` + postId);
-   
-    return result;
+    return await request.get(`${baseUrl}/` + postId);
 };
 
-export const createPost = async (data) => {
-    const result = await request.post(baseUrl, data);
-    
-    return result;
+export const createPost = async (data, userId) => { 
+    return await request.post(baseUrl, addOwner(data, userId));
 };
 
-export const editPost = async (postId, data) => {
-    const result = await request.put(`${baseUrl}/` + postId, data);
-
-    return result;
+export const editPost = async (postId, data, userId) => {
+    return await request.put(`${baseUrl}/` + postId, addOwner(data, userId));
 };
 
 export const deletePost = async (postId) => {
-    const result = await request.del(`${baseUrl}/` + postId);
-    
-    return result;
+    return  await request.del(`${baseUrl}/` + postId);
 };
 

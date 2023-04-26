@@ -16,7 +16,7 @@ export const PostDetails = () => {
 
     const { userId } = useContext(UserContext);
     const { onDelete } = useContext(StateContext);
-
+    
     useEffect(() => {
         postsService.getOnePost(postId)
             .then(result => {
@@ -32,7 +32,7 @@ export const PostDetails = () => {
         onDelete(postId);
     };
 
-    const isOwner = post._ownerId === userId;
+    const isOwner = post.owner?.objectId === userId;
 
     return (
         <>

@@ -1,6 +1,7 @@
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { UserContext } from './UserContext';
 import * as postsService from '../services/postsService';
 
 export const StateContext = createContext();
@@ -11,11 +12,12 @@ export const StateProvider = ({
     const navigate = useNavigate();
     const [posts, setPosts] = useState([]);
     const [error, SetError] = useState(null);
+    const { userId } = useContext(UserContext);
 
     useEffect(() => {
         postsService.getAllPosts()
             .then(result => {
-                setPosts(result);
+                setPosts(result.results);
             });
     }, []);
 
@@ -26,9 +28,15 @@ export const StateProvider = ({
             }
             SetError('');
 
-            const post = await postsService.createPost(data);
+            const result = await postsService.createPost(data, userId);
 
-            setPosts(state => [post, ...state]);
+            const objectId = result.objectId;
+            const title = data.title;
+            const imageUrl = data.imageUrl;
+            const author = data.author;
+            const content = data.content;
+
+            setPosts(state => [{ objectId, title, imageUrl, author, content}, ...state]);
 
             navigate('/catalog');
         } catch (err) {
@@ -43,11 +51,17 @@ export const StateProvider = ({
             }
             SetError('');
 
-            const result = await postsService.editPost(values._id, values);
+            const objectId = values.objectId;
+            const title = values.title;
+            const imageUrl = values.imageUrl;
+            const author = values.author;
+            const content = values.content;
+          
+            await postsService.editPost(values.objectId, { objectId, title, imageUrl, author, content }, userId);
+           
+            setPosts(state => state.map(x => x.objectId === values.objectId ? { objectId, title, imageUrl, author, content } : x));
 
-            setPosts(state => state.map(x => x._id === values._id ? result : x));
-
-            navigate(`/catalog/${values._id}`);
+            navigate(`/catalog/${values.objectId}`);
         } catch (err) {
             SetError(err);
         }
@@ -60,7 +74,7 @@ export const StateProvider = ({
         if (choice) {
             await postsService.deletePost(postId);
 
-            setPosts(state => state.filter(x => x._id !== postId));
+            setPosts(state => state.filter(x => x.objectId !== postId));
 
             navigate('/catalog');
         }
