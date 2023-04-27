@@ -17,27 +17,34 @@ export const Likes = ({
     useEffect(() => {
         likesService.getLikes(postId)
             .then(result => {
-                setLikes(result);
+                setLikes(result[0]);
             });
     }, [postId]);
-
+    
     const onLikeClick = async () => {
-        const result = likes.find(x => x._ownerId === userId);
-
+        const result = likes.find(x => x.userId === userId);
+      
         if (result) {
-            await likesService.dislike(result._id, userId);
-            setLikes(state => state.filter(x => x._id !== result._id));
+            await likesService.dislike(result.objectId);
+           
+            setLikes(state => state.filter(x => x.userId !== userId));
             setIsLiked(false);
         } else {
-            const response = await likesService.addLike(postId, userId);
-            setLikes(state => [...state, response]);
+            const res = await likesService.addLike(postId, userId);
+            const data = {
+                objectId: res.objectId,
+                postId,
+                userId
+            };
+           
+            setLikes(state => [...state, data]);
             setIsLiked(true);
         }
     };
 
     return (
         <>
-            <span className={styles['likes']}><i className="far fa-heart"></i> Likes: {likes.length}</span>
+            <span className={styles['likes']}><i className="far fa-heart"></i> Likes: {likes?.length}</span>
 
             {isAuthenticated && !isOwner && (
                 <button className={isLiked ? 'liked' : ''} onClick={onLikeClick} ><i className="fas fa-thumbs-up"></i> Like</button>
