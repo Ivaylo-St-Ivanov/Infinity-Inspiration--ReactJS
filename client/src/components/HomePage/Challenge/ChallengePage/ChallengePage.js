@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import * as back4AppService from '../../../../servicesForBack4App/back4AppService';
+import * as otherService from '../../../../services/otherService';
 
 import { Header } from '../../../Header/Header';
 import { Footer } from '../../../Footer/Footer';
@@ -10,7 +10,7 @@ export const ChallengePage = () => {
     const [state, setState] = useState([]);
 
     useEffect(() => {
-        back4AppService.getChallengePage()
+        otherService.getChallengePage()
             .then(result => {
                 setState(result.results[0]);
             });

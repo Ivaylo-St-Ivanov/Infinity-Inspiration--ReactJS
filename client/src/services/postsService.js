@@ -1,5 +1,5 @@
-import * as request from '../servicesForBack4App/requesterBack4App';
-import { addOwner } from './emailValidation';
+import * as request from './requester';
+import { addOwner } from './utils';
 
 const baseUrl = 'https://parseapi.back4app.com/classes/Posts';
 

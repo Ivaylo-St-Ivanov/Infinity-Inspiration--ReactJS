@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from 'react';
 
-import * as back4AppService from '../servicesForBack4App/back4AppService';
+import * as otherService from '../services/otherService';
 
 export const PersonsContext = createContext();
 
@@ -10,7 +10,7 @@ export const PersonsProvider = ({
     const [persons, setPersons] = useState([]);
 
     useEffect(() => {
-        back4AppService.getAllPersons()
+        otherService.getAllPersons()
             .then(result => {
                 setPersons(result.results);
             });

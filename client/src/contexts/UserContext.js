@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import * as userService from '../services/userService';
-import * as validation from '../services/emailValidation';
+import * as validation from '../services/utils';
 
 export const UserContext = createContext();
 

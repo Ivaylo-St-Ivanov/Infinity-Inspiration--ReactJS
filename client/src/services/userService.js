@@ -1,4 +1,4 @@
-import * as request from '../servicesForBack4App/requesterBack4App';
+import * as request from './requester';
 
 const baseUrl = 'https://parseapi.back4app.com';
 
