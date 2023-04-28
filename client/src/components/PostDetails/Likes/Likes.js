@@ -18,8 +18,9 @@ export const Likes = ({
         likesService.getLikes(postId)
             .then(result => {
                 setLikes(result[0]);
+                return setIsLiked(result[0].find(x => x.userId === userId) ? true : false);
             });
-    }, [postId]);
+    }, [postId, userId]);
     
     const onLikeClick = async () => {
         const result = likes.find(x => x.userId === userId);
@@ -34,7 +35,8 @@ export const Likes = ({
             const data = {
                 objectId: res.objectId,
                 postId,
-                userId
+                userId,
+                isLiked: true
             };
            
             setLikes(state => [...state, data]);
