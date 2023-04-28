@@ -8,7 +8,56 @@ export const AboutPage = () => {
             <Header />
 
             <div className={styles['about-page']}>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia fuga atque necessitatibus veritatis. Harum consectetur, nesciunt neque dignissimos incidunt maiores aliquid dolorem eaque non ullam ab quos quibusdam totam ratione? Exercitationem consequuntur nam laborum eveniet dolorem culpa! Nobis sunt incidunt cumque qui dolorum distinctio, possimus nam obcaecati vel minus itaque excepturi cupiditate eveniet nostrum, ad laudantium voluptate? Nesciunt hic fuga commodi quam dolorem eum tempora ex fugiat sed sapiente, neque, odit illum! Esse placeat quidem labore unde, dicta fugit beatae a provident, nisi vel harum, dignissimos sed quasi quia blanditiis eum. Maiores, itaque! Atque voluptas obcaecati autem ratione enim maiores in dicta. Odit itaque sed totam repellat repellendus quae laudantium placeat harum non ratione, obcaecati ut, velit tempora et accusantium consequatur aperiam recusandae! Esse sequi facere eius atque, nemo ducimus repudiandae, mollitia dolorum, impedit eos sapiente accusamus nam reprehenderit amet quae in repellendus expedita? Impedit culpa iste dolores! Iure laborum iusto eius autem minima, omnis temporibus vitae fuga, officiis quidem praesentium assumenda dolorem consequuntur soluta, rem similique veritatis accusamus quis facilis numquam commodi voluptatum at! Consectetur dicta illo, omnis sit corporis esse ipsum? Dolorem officia modi non nemo perferendis placeat deleniti magnam quibusdam, animi libero laboriosam reiciendis laborum rem porro aliquid omnis quos ab quasi ipsa! Itaque tenetur aut officia iste minima id maxime ex, laborum animi veritatis maiores nihil ipsum nesciunt cum fugiat assumenda, totam rem iusto voluptas! Dolores corporis consectetur nobis sit nulla, vero libero provident consequuntur, quasi neque nemo numquam corrupti quae. Asperiores eligendi nemo esse earum ea consectetur temporibus totam culpa, pariatur velit illo vero magnam sunt vitae ex cum officia saepe. Deleniti nihil esse eligendi placeat alias impedit nobis. Quidem aut animi obcaecati hic eos accusamus provident doloremque cumque incidunt ullam, et dolorum voluptatum aliquid? Fugiat illo dolorum dolorem ducimus minima quis, aut facere voluptate vel in, cumque exercitationem a quasi veritatis sequi perferendis architecto? Alias in magnam ratione exercitationem officia, incidunt earum totam sequi omnis ipsum ullam ducimus beatae delectus amet quaerat similique necessitatibus nobis id nihil quidem quos dolores veritatis vero. Enim, perferendis ea iusto aperiam saepe magni voluptatem debitis animi sed neque, culpa dolorum facilis doloremque, quaerat aliquam. Exercitationem voluptate in molestiae autem doloremque quas, perferendis harum rerum at unde soluta, eum aliquid consectetur non, magnam adipisci et sapiente enim nulla est! Nemo eaque optio beatae ipsa dolores aperiam repellendus id eius autem voluptas quos ea, rem asperiores, ut quibusdam incidunt deleniti esse porro. Numquam in fuga tempore labore, voluptatum cupiditate corrupti laborum quaerat qui, fugiat exercitationem ea dolore quas deserunt sunt harum excepturi tempora libero. Libero sint culpa ipsam veniam illo dolores quo quasi id sequi, explicabo ipsum itaque quis debitis eos neque aliquam magni natus quae sapiente voluptas tempore sit deleniti. Repudiandae sunt quibusdam saepe vero quis reprehenderit, deserunt porro adipisci, asperiores nihil ex. Voluptates repellendus tempora ullam quod qui, debitis laboriosam velit quia odit magni cumque est perspiciatis nostrum harum porro id aperiam aut, ea impedit dolorem consectetur et quisquam deserunt. Animi, inventore neque quasi doloribus unde minus voluptatum dolor voluptatibus quam odio ut recusandae laborum architecto dignissimos suscipit tempora nulla molestiae excepturi provident facilis, deleniti, quo laboriosam. Eveniet at nemo, excepturi dignissimos iure id culpa! Exercitationem necessitatibus, recusandae quaerat perferendis qui rerum dolore alias harum illo temporibus voluptate id molestiae, soluta nemo nam molestias eius itaque laboriosam quod quisquam et magnam. Necessitatibus iste id itaque veniam quis nam, nulla labore reiciendis obcaecati error nobis nesciunt architecto fuga. Autem nulla delectus veritatis unde nemo necessitatibus inventore excepturi est assumenda eligendi nobis labore beatae temporibus dolorum recusandae, laboriosam tenetur rem omnis illum dignissimos error quae sit facere. Autem, ipsa sint?</p>
+                <div className={styles['intro']}>
+                    <div>
+                        <p>it's simple</p>
+                        <hr />
+                        <p>Our mission keeps us focused, our vision drives us and our values dictate how we succeed. To best understand "Infinity inspiration", we invite you to learn about our story...</p>
+                    </div>
+                    <div>
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.C-roQQtMjIv6bbIj_q9zbAHaFZ%26pid%3DApi&f=1&ipt=9147cb752cf25f8025b202911abd80fd040bc71182aa7f2c5be81422160abd28&ipo=images" alt="drawing" />
+                    </div>
+                </div>
+
+                <div className={styles['story']}>
+                    <h2>Our Story</h2>
+                    <hr />
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere perferendis nemo incidunt minima nostrum in voluptatum iusto saepe ab veniam quae dolorem, illum, nisi est repudiandae doloribus, dolores excepturi explicabo.</p>
+                    <br />
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores ullam vero quae provident beatae voluptatum sit? Eligendi porro et voluptatibus saepe ipsum deserunt eaque delectus, veniam explicabo nulla, amet aut. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat a ducimus debitis sunt! Ipsa, earum tenetur debitis nisi asperiores placeat illo? Similique tenetur consectetur numquam suscipit? Saepe provident omnis quia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, labore? Doloremque expedita nulla nobis aliquam recusandae rerum quam tempora cum obcaecati, minima ipsum nihil suscipit similique harum autem saepe dicta!</p>
+                    <br />
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus similique cupiditate fuga, optio distinctio officiis nisi dolores consectetur tenetur fugiat culpa quam ad molestiae, iusto qui quibusdam assumenda recusandae ipsum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, quidem. Iure dolores quis laborum voluptatem aperiam harum id architecto non magnam animi, voluptas optio nihil ducimus, hic, esse est facere?</p>
+                </div>
+
+                <div className={styles['team-work']}>
+                    <div>
+                        <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis possimus atque eveniet odio!</h2>
+                        <hr />
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, ut veniam! In soluta iusto doloribus repellat architecto cum nobis fugit facilis optio, tenetur consequuntur iure facere expedita aliquid dolores maiores? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa repellat ex assumenda ullam voluptatem vitae, asperiores commodi dignissimos earum expedita beatae quo tenetur blanditiis, velit rerum excepturi nam qui est.</p>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1572021335469-31706a17aaef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="working together" />
+                    </div>
+                </div>
+
+                <div className={styles['more-info']}>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGVtcGxveWVlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt="team" />
+                    </div>
+                    <div>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur fugiat saepe temporibus aliquam tenetur reiciendis sint esse placeat obcaecati nostrum, numquam ducimus quas provident est reprehenderit! Dignissimos facilis eos unde? </p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis id, inventore, corrupti magnam blanditiis modi sapiente dolorem, hic eius ipsa itaque harum suscipit iusto quia voluptate magni. Officia, ut facere.</p>
+                        <br />
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, harum voluptate fugiat quo minima placeat, sint dolore architecto nam repellendus totam unde, cupiditate excepturi maiores vel repudiandae accusamus quibusdam facere?</p>
+                    </div>
+                </div>
+
+                <div className={styles['team']}>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum unde nulla ab commodi vel optio aspernatur ipsum natus magni soluta aliquid voluptates officiis labore sit ducimus in delectus repellat, est culpa. Perferendis sed earum pariatur eveniet modi illum blanditiis, vel delectus, sint nobis ut quos dicta consectetur. Temporibus blanditiis voluptates quam tenetur fugiat et molestiae incidunt, doloremque tempore assumenda enim ullam? Laboriosam excepturi quo cum nulla tempora, voluptatum officiis doloribus animi soluta rem. Excepturi doloribus temporibus, fugit soluta nam porro quam minus non maiores nemo debitis consequatur voluptatem tempore expedita reiciendis sunt beatae magni perspiciatis eum molestiae voluptates quasi rem?</p>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1517488629431-6427e0ee1e5f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="team" />
+                    </div>
+                </div>
             </div>
 
             <Footer />

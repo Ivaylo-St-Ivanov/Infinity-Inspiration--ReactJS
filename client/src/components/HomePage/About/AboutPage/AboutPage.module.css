@@ -1,8 +1,208 @@
-.about-page {
-    background-color: powderblue;
+.about-page .intro {
+    display: flex;
 }
 
-.about-page p {
-    margin: 0px 300px 0px 300px;
-    padding: 100px 0px 100px 0px;
+.about-page .intro div:first-of-type {
+    width: 60%;
+    text-align: center;
+    padding: 0px 100px;
+}
+
+.about-page .intro div:first-of-type p:first-of-type {
+    padding: 100px 0px 10px 0px;
+    font-size: 36px;
+}
+
+.about-page .intro div:first-of-type hr {
+    width: 10%;
+}
+
+.about-page .intro div:last-of-type {
+    width: 40%;
+}
+
+.about-page .intro div:last-of-type img {
+    width: 100%;
+}
+
+.about-page .story {
+    padding: 0px 100px;
+    margin-bottom: 60px;
+}
+
+.about-page .story hr {
+    width: 7%;
+    margin-left: 30px;
+}
+
+.about-page .team-work {
+    position: relative;
+    margin-bottom: 750px;
+}
+
+.about-page .team-work div:first-of-type {
+    width: 50%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #D7EFFD;
+    padding: 40px;
+}
+
+.about-page .team-work div:first-of-type hr {
+    width: 30%;
+    color: yellow;
+}
+
+.about-page .team-work div:last-of-type {
+    width: 60%;
+    position: absolute;
+    top: 80px;
+    right: 0px;
+    z-index: -1;
+}
+
+.about-page .team-work div:last-of-type img {
+    width: 100%;
+    height: 60vh;
+}
+
+.about-page .more-info {
+    display: flex;
+    margin-bottom: 60px;
+}
+
+.about-page .more-info div:first-of-type {
+    width: 80%;
+    height: 50vh;
+}
+
+.about-page .more-info div:first-of-type img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-page .more-info div:last-of-type {
+   padding: 80px;
+   font-weight: bold;
+   font-style: italic;
+   font-size: 18px;
+}
+
+.about-page .team {
+    padding: 0px 50px;
+    margin-bottom: 60px;
+}
+
+.about-page .team p {
+    padding: 0px 30px;
+    margin-bottom: 30px;
+}
+
+.about-page .team div {
+    height: 50vh;
+    padding: 0px 200px;
+}
+
+.about-page .team div img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain
+}
+
+@media (max-width: 980px) {
+    .about-page .intro div:first-of-type {
+        padding: 0px 50px;
+    }
+    
+    .about-page .intro div:first-of-type p:first-of-type {
+        padding: 50px 0px 10px 0px;
+    }
+
+    .about-page .story {
+        padding: 0px 50px;
+    }
+
+    .about-page .more-info {
+        flex-direction: column-reverse;
+    }
+
+    .about-page .more-info div:last-of-type {
+        padding-top: 0px;
+    }
+
+    .about-page .more-info div:first-of-type {
+        width: 50%;
+        height: 40vh;
+        margin-left: 100px;
+    }
+    
+    .about-page .more-info div:first-of-type img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .about-page .team div {
+        padding: 0px 100px;
+    }
+}
+
+@media (max-width: 800px) {
+    .about-page .intro {
+        flex-direction: column;
+    }
+
+    .about-page .intro div:last-of-type {
+        margin-left: 350px;
+    }
+}
+
+@media (max-width: 740px) {
+    .about-page .team-work {
+        position: unset;
+        margin-bottom: 60px;
+    }
+    
+    .about-page .team-work div:first-of-type {
+        width: 100%;
+        position: unset;
+        padding: 50px;
+    }
+    
+    .about-page .team-work div:first-of-type h2 {
+        text-align: center;
+    }
+    
+    .about-page .team-work div:last-of-type {
+        width: 100%;
+        position: unset;
+    }
+    
+    .about-page .team-work div:last-of-type img {
+        height: 40vh;
+    }
+
+    .about-page .team div {
+        padding: 0px;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-page .intro div:first-of-type {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .about-page .intro div:last-of-type {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 400px) {
+    .about-page .intro div:last-of-type {
+        margin-left: 150px;
+        margin-bottom: 20px;
+    }
 }
