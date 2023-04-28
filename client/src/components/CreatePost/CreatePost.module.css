@@ -29,9 +29,17 @@
     padding: 50px 80px;
 }
 
+.edit .form-create-edit a {
+    color: gray;
+}
+
+.edit .form-create-edit a:hover {
+    text-decoration: none;
+}
+
 .create .form-create-edit h2,
 .edit .form-create-edit h2 {
-    margin-bottom: 20px;
+    margin: 20px 0px;
 }
 
 .create-form input,

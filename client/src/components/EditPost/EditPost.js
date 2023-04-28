@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import { useForm } from '../../hooks/useForm';
 import { StateContext } from '../../contexts/StateContext';
@@ -37,6 +37,7 @@ export const EditPost = () => {
     return (
         <main className={styles['edit']}>
             <div className={styles['form-create-edit']}>
+                <Link className="anchor" to={`/catalog/${postId}`}>Back to details page</Link>
                 <h2>Edit Post</h2>
 
                 <form className={styles['edit-form']} onSubmit={onSubmit}>
