@@ -1,3 +1,50 @@
+.persons-page {
+    padding: 60px 0px;
+    position: relative;
+}
+
+.persons-page .search-btn {
+    display: flex;
+    margin: 0px 50px;
+    padding: 10px;
+    position: sticky;
+    top: 100px;
+    right: 0px;
+    background: lightgray;
+}
+
+.persons-page .search-btn .quote {
+    margin-right: auto;
+    height: 10vh;
+    font-style: italic;
+    display: flex;
+    gap: 30px;
+}
+
+.persons-page .search-btn .quote img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.persons-page .search-btn .quote div blockquote {
+    font-size: 18px;
+    text-shadow: 5px 5px 5px black;
+}
+
+.persons-page .search-btn form {
+    padding: 20px;
+}
+
+.persons-page .search-btn form input {
+    margin-right: 5px;
+    border: 5px solid blueviolet;
+}
+
+.persons-page .search-btn form button:hover {
+    cursor: pointer;
+    font-size: 18px;
+}
+
 #persons {
     padding: 60px 100px 0px 100px;
 }
@@ -13,7 +60,8 @@
     margin-bottom: 80px;
 }
 
-#persons .cards {
+#persons .cards,
+.persons-page #persons .cards {
     display: flex;
     flex-wrap: wrap;
     gap: 18px;
@@ -21,8 +69,23 @@
     margin-bottom: 10px;
 }
 
+.persons-page #persons .cards .not-result {
+    height: 20vh;
+    padding-top: 40px;
+}
+
+.persons-page #persons .cards .not-result p {
+    font-size: 36px;
+    font-style: oblique;
+    font-weight: bolder;
+}
+
 #persons .cards .card {
     width: 15%;
+}
+
+.persons-page #persons .cards .card {
+    width: 25%;
 }
 
 #persons .cards .card:hover {
@@ -33,8 +96,16 @@
     transition: width 2s, transform 2s;
 }
 
+.persons-page #persons .cards .card:hover {
+    width: 27%;
+}
+
 #persons .cards .card div {
     height: 168px;
+}
+
+.persons-page #persons .cards .card div {
+    height: 30vh;
 }
 
 #persons .cards .card div img {
@@ -73,6 +144,14 @@
     #persons .cards .card:hover {
         width: 22%;
     }
+
+    .persons-page #persons .cards .card {
+        width: 30%;
+    }
+
+    .persons-page #persons .cards .card:hover {
+        width: 32%;
+    }
 }
 
 @media (max-width: 1070px) {
@@ -82,6 +161,18 @@
 
     #persons .cards .card:hover {
         width: 27%;
+    }
+
+    .persons-page #persons {
+        padding: 0px;
+    }
+
+    .persons-page #persons .cards .card {
+        width: 35%;
+    }
+
+    .persons-page #persons .cards .card:hover {
+        width: 37%;
     }
 }
 
@@ -93,9 +184,31 @@
     #persons .cards .card:hover {
         width: 42%;
     }
+
+    .persons-page #persons .cards .card {
+        width: 50%;
+    }
+
+    .persons-page #persons .cards .card:hover {
+        width: 52%;
+    }
+}
+
+@media (max-width: 706px) {
+    .persons-page .search-btn {
+        justify-content: flex-end;
+    }
+
+    .persons-page .search-btn .quote {
+        display: none;
+    }
 }
 
 @media (max-width: 610px) {
+    .persons-page .search-btn {
+        top: 200px;
+    }
+
     #persons {
         padding: 0px 50px;
     }
@@ -115,10 +228,24 @@
     #persons .cards .card:hover {
         width: 52%;
     }
+
+    .persons-page #persons .cards .card {
+        width: 60%;
+    }
+
+    .persons-page #persons .cards .card:hover {
+        width: 62%;
+    }
 }
 
 @media (max-width: 430px) {
     #persons h2 {
         font-size: 30px;
+    }
+}
+
+@media (max-width: 356px) {
+    .persons-page .search-btn {
+        top: 240px;
     }
 }

@@ -16,8 +16,15 @@ export const PersonsProvider = ({
             });
     }, []);
 
+    const onSearchPersonSubmit = async (text) => {
+        const { results } = await otherService.getPersonsByName(text.name);
+
+        setPersons(results);
+    };
+
     const ctx = {
-        persons
+        persons,
+        onSearchPersonSubmit
     };
 
     return (

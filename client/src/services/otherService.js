@@ -13,3 +13,9 @@ export const getAllPersons = async () => {
 export const getPersonById = async (personId) => {
     return await request.get(`${baseUrl}/Persons/${personId}`);
 };
+
+export const getPersonsByName = async (name) => {
+    const searchQuery = encodeURIComponent(`{"name": "${name}"}`);
+
+    return await request.get(`${baseUrl}/Persons?where=${searchQuery}`);
+};
