@@ -13,11 +13,13 @@ export const StateProvider = ({
     const [posts, setPosts] = useState([]);
     const [error, SetError] = useState(null);
     const { userId } = useContext(UserContext);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         postsService.getAllPosts()
             .then(result => {
                 setPosts(result.results);
+                return setTimeout(setIsLoading(false), 800);
             });
     }, []);
 
@@ -85,7 +87,8 @@ export const StateProvider = ({
         onEditPostSubmit,
         onDelete,
         posts,
-        error
+        error,
+        isLoading
     };
 
     return (

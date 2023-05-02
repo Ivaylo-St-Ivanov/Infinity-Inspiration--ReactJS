@@ -1,0 +1,16 @@
+.loading {
+    height: 40vh;
+    text-align: center;
+}
+
+.loading>div {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.loading span {
+    font-size: 36px;
+    font-weight: bolder;
+    /* margin-right: 10px; */
+}

@@ -8,11 +8,13 @@ export const PersonsProvider = ({
     children
 }) => {
     const [persons, setPersons] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         otherService.getAllPersons()
             .then(result => {
                 setPersons(result.results);
+                return setTimeout(setIsLoading(false), 800);
             });
     }, []);
 
@@ -24,6 +26,7 @@ export const PersonsProvider = ({
 
     const ctx = {
         persons,
+        isLoading,
         onSearchPersonSubmit
     };
 
