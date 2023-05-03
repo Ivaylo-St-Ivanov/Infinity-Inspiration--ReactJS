@@ -24,25 +24,25 @@ function App() {
         <UserProvider>
             <StateProvider>
                 <PersonsProvider>
-                <Routes>
-                    <Route path='/' element={<HomePage />} />
+                    <Routes>
+                        <Route path='/' element={<HomePage />} />
 
-                    <Route path='/login' element={<Login />} />
-                    <Route path='/register' element={<Register />} />
-                    <Route path='/logout' element={<Logout />} />
-                    
-                    <Route path='/create-post' element={<CreatePost />} />
-                    <Route path='/catalog' element={<CatalogPage />} />
-                    <Route path='/catalog/:postId' element={<PostDetails />} />
-                    <Route path='/catalog/:postId/edit' element={<EditPost />} />
+                        <Route path='/login' element={<Login />} />
+                        <Route path='/register' element={<Register />} />
+                        <Route path='/logout' element={<Logout />} />
 
-                    <Route path='/about-page' element={<AboutPage />} />
-                    <Route path='/persons-page' element={<PersonsPage />} />
-                    <Route path='/persons-page/:personId' element={<PersonDetails />} />
-                    <Route path='/challenge' element={<ChallengePage />} />
+                        <Route path='/create-post' element={<CreatePost />} />
+                        <Route path='/catalog' element={<CatalogPage />} />
+                        <Route path='/catalog/:postId' element={<PostDetails />} />
+                        <Route path='/catalog/:postId/edit' element={<EditPost />} />
 
-                    <Route path='/message' element={<MessagePage />} />
-                </Routes>
+                        <Route path='/about-page' element={<AboutPage />} />
+                        <Route path='/persons-page' element={<PersonsPage />} />
+                        <Route path='/persons-page/:personId' element={<PersonDetails />} />
+                        <Route path='/challenge' element={<ChallengePage />} />
+
+                        <Route path='/message' element={<MessagePage />} />
+                    </Routes>
                 </PersonsProvider>
             </StateProvider>
         </UserProvider>

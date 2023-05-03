@@ -9,7 +9,7 @@ export const isValidEmail = (email) => {
 };
 
 export const createPointer = (className, objectId) => {
-    return { __type: 'Pointer', className, objectId};
+    return { __type: 'Pointer', className, objectId };
 };
 
 export const addOwner = (record, ownerId) => {
@@ -17,6 +17,6 @@ export const addOwner = (record, ownerId) => {
         ...record,
         owner: createPointer('_User', ownerId)
     };
-    
+
     return data;
 };

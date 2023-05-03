@@ -1,5 +1,5 @@
 import * as request from './requester';
-import { addOwner } from './utils';
+import { addOwner } from '../utils/utils';
 
 const baseUrl = 'https://parseapi.back4app.com/classes/Posts';
 
