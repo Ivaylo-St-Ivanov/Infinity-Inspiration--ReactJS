@@ -7,7 +7,8 @@ import * as postsService from '../services/postsService';
 export const StateContext = createContext();
 
 export const StateProvider = ({
-    children
+    children,
+    pathname
 }) => {
     const navigate = useNavigate();
     const [posts, setPosts] = useState([]);
@@ -23,12 +24,15 @@ export const StateProvider = ({
             });
     }, []);
 
+    useEffect(() => {
+        SetError(null);
+    }, [pathname]);
+
     const onCreatePostSubmit = async (data) => {
         try {
             if (data.title === '' || data.imageUrl === '' || data.author === '' || data.content === '') {
                 throw new Error('All fields are required!');
             }
-            SetError('');
 
             const result = await postsService.createPost(data, userId);
 
@@ -51,7 +55,6 @@ export const StateProvider = ({
             if (values.title === '' || values.imageUrl === '' || values.author === '' || values.content === '') {
                 throw new Error('All fields are required!');
             }
-            SetError('');
 
             const objectId = values.objectId;
             const title = values.title;

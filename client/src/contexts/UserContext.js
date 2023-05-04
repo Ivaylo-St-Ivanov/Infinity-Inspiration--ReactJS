@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useLocalStorage } from '../hooks/useLocalStorage';
@@ -9,17 +9,21 @@ export const UserContext = createContext();
 
 export const UserProvider = ({
     children,
+    pathname
 }) => {
     const navigate = useNavigate();
     const [user, setUser] = useLocalStorage('auth', {});
     const [error, setError] = useState(null);
+
+    useEffect(() => {
+        setError(null);
+    }, [pathname]);
     
     const onLoginSubmit = async (data) => {
         try {
             if (data.email === '' || data.password === '') {
                 throw new Error('All fields are required!');
             }
-            setError('');
 
             const isValid = validation.isValidEmail(data.email);
 
@@ -42,7 +46,6 @@ export const UserProvider = ({
             if (data.email === '' || data.username === '' || data.password === '' || data.repass === '') {
                 throw new Error('All fields are required!');
             }
-            setError('');
 
             const isValid = validation.isValidEmail(data.email);
 

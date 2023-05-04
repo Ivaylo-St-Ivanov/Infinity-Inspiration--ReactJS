@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 import { UserProvider } from './contexts/UserContext';
 import { StateProvider } from './contexts/StateContext';
@@ -19,10 +19,11 @@ import { PersonDetails } from './components/PersonDetails/PersonDetails';
 import { ChallengePage } from './components/HomePage/Challenge/ChallengePage/ChallengePage';
 
 function App() {
+    const { pathname } = useLocation();
 
     return (
-        <UserProvider>
-            <StateProvider>
+        <UserProvider pathname={pathname}>
+            <StateProvider pathname={pathname}>
                 <PersonsProvider>
                     <Routes>
                         <Route path='/' element={<HomePage />} />
