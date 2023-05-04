@@ -9,10 +9,12 @@ export const PersonsProvider = ({
 }) => {
     const [persons, setPersons] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         otherService.getAllPersons()
             .then(result => {
+                setIsVisible(false);
                 setPersons(result.results);
                 return setTimeout(setIsLoading(false), 800);
             });
@@ -21,13 +23,23 @@ export const PersonsProvider = ({
     const onSearchPersonSubmit = async (text) => {
         const { results } = await otherService.getPersonsByName(text.name);
 
+        setIsVisible(true);
+        setPersons(results);
+    };
+
+    const onBackToAllPersons = async () => {
+        const { results } = await otherService.getAllPersons();
+
+        setIsVisible(false);
         setPersons(results);
     };
 
     const ctx = {
         persons,
         isLoading,
-        onSearchPersonSubmit
+        isVisible,
+        onSearchPersonSubmit,
+        onBackToAllPersons
     };
 
     return (

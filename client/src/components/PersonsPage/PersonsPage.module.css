@@ -3,7 +3,7 @@
     position: relative;
 }
 
-.persons-page .search-btn {
+.persons-page .search-person {
     display: flex;
     margin: 0px 50px;
     padding: 10px;
@@ -13,7 +13,7 @@
     background: lightgray;
 }
 
-.persons-page .search-btn .quote {
+.persons-page .search-person .quote {
     margin-right: auto;
     height: 10vh;
     font-style: italic;
@@ -21,32 +21,40 @@
     gap: 30px;
 }
 
-.persons-page .search-btn .quote img {
+.persons-page .search-person .quote img {
     height: 100%;
     object-fit: cover;
 }
 
-.persons-page .search-btn .quote div blockquote {
+.persons-page .search-person .quote div {
+    margin-top: 10px;
+}
+
+.persons-page .search-person .quote div blockquote {
     font-size: 18px;
     text-shadow: 5px 5px 5px black;
 }
 
-.persons-page .search-btn form {
+.persons-page .search-person form {
     padding: 20px;
 }
 
-.persons-page .search-btn form input {
+.persons-page .search-person form input {
     margin-right: 5px;
     border: 5px solid blueviolet;
 }
 
-.persons-page .search-btn form button:hover {
+.persons-page .search-person form button:hover {
     cursor: pointer;
     font-size: 18px;
 }
 
 #persons {
     padding: 60px 100px 0px 100px;
+}
+
+#persons .all-persons-btn {
+    padding: 5px 30px;
 }
 
 #persons h2 {
@@ -195,17 +203,17 @@
 }
 
 @media (max-width: 706px) {
-    .persons-page .search-btn {
+    .persons-page .search-person {
         justify-content: flex-end;
     }
 
-    .persons-page .search-btn .quote {
+    .persons-page .search-person .quote {
         display: none;
     }
 }
 
 @media (max-width: 610px) {
-    .persons-page .search-btn {
+    .persons-page .search-person {
         top: 200px;
     }
 
@@ -245,7 +253,7 @@
 }
 
 @media (max-width: 356px) {
-    .persons-page .search-btn {
+    .persons-page .search-person {
         top: 240px;
     }
 }
