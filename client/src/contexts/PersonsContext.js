@@ -20,8 +20,8 @@ export const PersonsProvider = ({
             });
     }, []);
 
-    const onSearchPersonSubmit = async (text) => {
-        const { results } = await otherService.getPersonsByName(text.name);
+    const onSearchPersonSubmit = async (data) => {
+        const { results } = await otherService.getPersonsByName(data.name);
 
         setIsVisible(true);
         setPersons(results);

@@ -1,7 +1,6 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 import { PersonsContext } from '../../contexts/PersonsContext';
-import { useForm } from '../../hooks/useForm';
 
 import { Loading } from '../Loading/Loading';
 import { Header } from '../Header/Header';
@@ -10,11 +9,28 @@ import { PersonItem } from './PersonItem/PersonItem';
 import styles from './PersonsPage.module.css';
 
 export const PersonsPage = () => {
-    const { persons, isLoading, onSearchPersonSubmit } = useContext(PersonsContext);
+    const { persons, isLoading, isVisible, onSearchPersonSubmit, onBackToAllPersons } = useContext(PersonsContext);
 
-    const { values, changeHandler, onSubmit } = useForm({
-        name: ''
-    }, onSearchPersonSubmit);
+    const [search, setSearch] = useState('');
+
+    const changeHandler = (e) => {
+        setSearch(e.target.value);
+    };
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+
+        const data = {
+            name: search
+        };
+
+        onSearchPersonSubmit(data);
+        setSearch('');
+    };
+
+    const onBackButtonClick = () => {
+        onBackToAllPersons();
+    };
 
     return (
         <>
@@ -22,7 +38,7 @@ export const PersonsPage = () => {
 
             {isLoading ? <Loading /> : (
                 <div className={styles['persons-page']}>
-                    <div className={styles['search-btn']}>
+                    <div className={styles['search-person']}>
                         <div className={styles['quote']}>
                             <img src="https://images.gr-assets.com/authors/1429114964p5/9810.jpg" alt="Albert Einstein" />
                             <div>
@@ -35,14 +51,18 @@ export const PersonsPage = () => {
                             <input
                                 type="text"
                                 name="name"
-                                placeholder='Search here'
-                                value={values.name}
-                                onChange={changeHandler} />
+                                placeholder='Search by full name'
+                                value={search}
+                                onChange={changeHandler}/>
                             <button>Search</button>
                         </form>
                     </div>
 
                     <article id={styles['persons']}>
+                    
+                        {isVisible && (
+                            <button onClick={onBackButtonClick} className={styles['all-persons-btn']}>Back</button>
+                        )}
 
                         <div className={styles['cards']}>
 
