@@ -29,7 +29,7 @@ export const ChallengePage = () => {
 
                     <h1>{state.title}</h1>
 
-                    <p>{state.content}</p>
+                    <p>{state.content}</p>                   
                 </div>
             )}
 

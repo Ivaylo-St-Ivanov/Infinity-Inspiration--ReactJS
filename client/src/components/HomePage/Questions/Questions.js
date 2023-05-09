@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import styles from './Questions.module.css';
 
 export const Questions = () => {
@@ -49,9 +51,9 @@ export const Questions = () => {
             </div>
 
             <div>
-                <a href="">
+                <Link to="/message">
                     Explore More Questions <i className="fas fa-arrow-right"></i>
-                </a>
+                </Link>
             </div>
         </section>
     );

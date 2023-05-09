@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import styles from './Ideas.module.css';
 
 export const Ideas = () => {
@@ -29,9 +31,9 @@ export const Ideas = () => {
             </div>
 
             <div>
-                <a href="">
+                <Link to="/message">
                     Explore More Videos <i className="fas fa-arrow-right"></i>
-                </a>
+                </Link>
             </div>
         </section>
     );
