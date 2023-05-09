@@ -13,6 +13,38 @@
 }
 
 .challenge-page p {
-    margin: 0px 400px 0px 400px;
-    padding-bottom: 50px;
+    padding: 0px 380px 50px 380px;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+    white-space: pre-wrap;
+}
+
+@media (max-width: 1600px) {
+    .challenge-page p {
+        padding: 0px 280px 50px 280px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .challenge-page p {
+        padding: 0px 180px 50px 180px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .challenge-page p {
+        padding: 0px 100px 50px 100px;
+    }
+}
+
+@media (max-width: 850px) {
+    .challenge-page h1 {
+        margin: 80px 50px 50px 50px;
+    }
+}
+
+@media (max-width: 500px) {
+    .challenge-page p {
+        padding: 0px 50px 50px 50px;
+    }
 }

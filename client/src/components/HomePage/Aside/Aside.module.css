@@ -18,3 +18,9 @@
 .aside ul li a i:hover {
     color: gray;
 }
+
+@media (max-width: 490px) {
+    .aside {
+        width: 50px;
+    }
+}
