@@ -5,73 +5,81 @@ This is a repository for a project defense to Software University ReactJS course
 ### About "Infinity Inspiration" web app
  
  
-"Infinity Inspiration" is a web application for sharing curious information. Visitors can learn from the great thinkers, explore the world’s biggest questions, find ideas, which can inspire or challenges, which can change the way of their think. Also if they sign up in application, can post information, that they think can be interesting for other users and like or comment other's posts.
+"Infinity Inspiration" is a web application for sharing of exciting informations. Visitors can learn from various great thinkers and explore the world’s biggest questions. They also can find here ideas, which can inspire or challenge them and possibly change the way of their thoughts. If they sign up within the application, they can post informations, that they think it can be interesting for other users. Here they can like or comment posts of other users.
 
          -----------
  
-The client side is a single page app, built with ReactJS, following the React development concepts. The application have responsive design, аll components use CSS modules.
+The client side of the app is a single page app, built with ReactJS and it is following the React development concepts. The application have responsive design and аll components use CSS modules.
 Client-side routing, error handling and data validation are implemented.
 The main files in the application are index.js and App.js
 
 	   -----------
  
-Back4App, one of the popular BaaS (Back-end as a Service) providers is used for backend purposes and storage. More information about Back4App could be found here -(https://www.back4app.com/).  
+Back4App is one of the popular BaaS (Back-end as a Service) providers, which is used here for the backend purposes and for the storage. More informations about Back4App can be found here: (https://www.back4app.com/).  
 
          -----------
  
- The application consist of public information accessible for all users like catalog and details.
+ The application contains public information, which is accessible for all of the users, for example catalog and details.
  
- Any activities like create (edit, delete) post, like or comment require authentication.
+ Any activities require authentication, for example: creating a post (edit, delete), or giving a like or comment.
  
  
 ### Functionality
 
-User Register (on Register page)
+User Registration (on Registering page)
  
-   - Register a new user by providing username, email and password.
+   - Registering a new user is possible by providing username, email and password.
  
-User Login (on Login page)
+User Login (on the Login page)
  
-   - Login in with email and password.
+   - Login is possible with email and password.
  
-User Logout (in navigation under showed username)
+User Logout (in the navigation under the shown username)
  
-   - Logout from the application. 
+   - Logout from the application.
  
 Home page
 
-   - In second section shown first five persons from Persons page.
-   - In the last section before footer showed the last six posts.
+   - In the second section, showing the first five persons from the persons page.
+   - In the last section, before the footer, showing the last six posts.
 
 Persons page
 
-   - Show all persons and can open details page for every one.
-   - Also in search field on the top of the page can find person by provide full name.
+   - It’s showing all persons and it can open the details page for everyone.
+   - Through the search field on the top of the page persons can be find by providing the full name.
  
 Catalog page 
  
-   - Show all posts, can open details for each one and (if login in) can create post.
+   - It’s showing all posts with their details, which can be opened separately and (if logged) a post can be created.
  
 Details pages
  
-   - Show person details. (on Persons page)
-   - Show post details and (if login in) can like (dislike) it. Also owners can edit and delete their posts. (on Catalog page)
+   - It’s showing person details. (on the Persons page)
+   - It’s showing post details and (if logged) a like (or a dislike) can be done. Also the owners of posts can edit and delete their own posts. (on the Catalog page)
  
 Create page
  
-   - Create a new post entry and save it to the database (only for authenticated user).
+   - A new post entry can be created and saved into the database (only for authenticated users).
  
 Edit page
  
-   - Edit existing post entry and save it to the database (only for owner user).
+   - Existing posts can be edited and saved into the database (only for owner users).
  
 Delete post
  
-   - Remove existing post entry from the database (only for owner user).
+   - Removing an existing post entry from the database (only for owner users).
  
  
- ### Getting started
+### Getting started
  
- 1. Install all dependencies - npm i
+ 1. Install all dependencies – 'npm i'
  
  2. Start the application with  'npm start' in the client directory.
+
+### Author’s note
+
+All code, such as HTML and CSS, is created completely (self developed) by the author.
+
+### Copyright and Author
+
+Ivaylo Ivanov
