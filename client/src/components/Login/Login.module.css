@@ -29,12 +29,13 @@
 
 .forgot-pass {
     margin-bottom: 30px;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .forgot-pass a {
-    display: block;
+    display: inline-block;
     text-align: right;
-    /* !!! Ръчичката на мишката е активна на целия ред !!! */
 }
 
 .info ul {

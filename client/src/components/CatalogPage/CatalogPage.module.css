@@ -36,6 +36,7 @@
     border-radius: 18px;
     overflow: hidden;
     margin-bottom: 30px;
+    box-shadow: 0px 0px 8px black;
     transition: all 1s ease;
 }
 

@@ -9,22 +9,27 @@ import { PersonItem } from './PersonItem/PersonItem';
 import styles from './PersonsPage.module.css';
 
 export const PersonsPage = () => {
-    const { persons, isLoading, isVisible, onSearchPersonSubmit, onBackToAllPersons } = useContext(PersonsContext);
+    let { persons, isLoading, isVisible, onBackToAllPersons } = useContext(PersonsContext);
 
+    const [searchResult, setSearchResult] = useState(persons);
     const [search, setSearch] = useState('');
 
     const changeHandler = (e) => {
         setSearch(e.target.value);
+
+        let result = persons.filter(p => p.name.toLowerCase().includes(e.target.value.toLowerCase()));
+
+        if (result.length === 0) {
+            result = persons.filter(p => p.degree.toLowerCase().includes(e.target.value.toLowerCase()));
+        }
+
+        setSearchResult(result);
     };
 
     const onSubmit = (e) => {
         e.preventDefault();
 
-        const data = {
-            name: search
-        };
-
-        onSearchPersonSubmit(data);
+        setSearchResult(persons);
         setSearch('');
     };
 
@@ -51,28 +56,28 @@ export const PersonsPage = () => {
                             <input
                                 type="text"
                                 name="name"
-                                placeholder='Search by full name'
+                                placeholder='Search'
                                 value={search}
-                                onChange={changeHandler}/>
-                            <button>Search</button>
+                                onChange={changeHandler} />
+                            <button>Reset</button>
                         </form>
                     </div>
 
                     <article id={styles['persons']}>
-                    
+
                         {isVisible && (
                             <button onClick={onBackButtonClick} className={styles['all-persons-btn']}>Back</button>
                         )}
 
                         <div className={styles['cards']}>
 
-                            {persons.length === 0 && (
+                            {searchResult.length === 0 && (
                                 <div className={styles['not-result']}>
                                     <p>Not found results!</p>
                                 </div>
                             )}
 
-                            {persons.map(person => (
+                            {searchResult.map(person => (
                                 <PersonItem key={person.objectId} person={person} />
                             ))}
 

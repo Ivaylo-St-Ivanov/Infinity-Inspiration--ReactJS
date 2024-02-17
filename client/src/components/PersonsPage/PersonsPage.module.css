@@ -10,7 +10,8 @@
     position: sticky;
     top: 100px;
     right: 0px;
-    background: lightgray;
+    background: rgba(211, 211, 211, 0.573);
+    backdrop-filter: blur(4px);
 }
 
 .persons-page .search-person .quote {
@@ -44,9 +45,14 @@
     border: 5px solid blueviolet;
 }
 
+.persons-page .search-person form button {
+    transition: all .7s ease;
+}
+
 .persons-page .search-person form button:hover {
     cursor: pointer;
-    font-size: 18px;
+    color: blueviolet;
+    transform: scale(1.1);
 }
 
 #persons {

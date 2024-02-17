@@ -20,13 +20,6 @@ export const PersonsProvider = ({
             });
     }, []);
 
-    const onSearchPersonSubmit = async (data) => {
-        const { results } = await otherService.getPersonsByName(data.name);
-
-        setIsVisible(true);
-        setPersons(results);
-    };
-
     const onBackToAllPersons = async () => {
         const { results } = await otherService.getAllPersons();
 
@@ -38,7 +31,6 @@ export const PersonsProvider = ({
         persons,
         isLoading,
         isVisible,
-        onSearchPersonSubmit,
         onBackToAllPersons
     };
 
