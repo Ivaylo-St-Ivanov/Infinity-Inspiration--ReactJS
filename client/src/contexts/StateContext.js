@@ -42,7 +42,7 @@ export const StateProvider = ({
             const author = data.author;
             const content = data.content;
 
-            setPosts(state => [{ objectId, title, imageUrl, author, content}, ...state]);
+            setPosts(state => [{ objectId, title, imageUrl, author, content }, ...state]);
 
             navigate('/catalog');
         } catch (err) {
@@ -61,9 +61,9 @@ export const StateProvider = ({
             const imageUrl = values.imageUrl;
             const author = values.author;
             const content = values.content;
-          
+
             await postsService.editPost(values.objectId, { objectId, title, imageUrl, author, content }, userId);
-           
+
             setPosts(state => state.map(x => x.objectId === values.objectId ? { objectId, title, imageUrl, author, content } : x));
 
             navigate(`/catalog/${values.objectId}`);
@@ -73,16 +73,11 @@ export const StateProvider = ({
     };
 
     const onDelete = async (postId) => {
-        // eslint-disable-next-line no-restricted-globals
-        const choice = confirm('Are you sure you want to delete this post?');
+        await postsService.deletePost(postId);
 
-        if (choice) {
-            await postsService.deletePost(postId);
+        setPosts(state => state.filter(x => x.objectId !== postId));
 
-            setPosts(state => state.filter(x => x.objectId !== postId));
-
-            navigate('/catalog');
-        }
+        navigate('/catalog');
     };
 
     const ctxState = {

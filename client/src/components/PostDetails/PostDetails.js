@@ -2,12 +2,12 @@ import { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 import { UserContext } from '../../contexts/UserContext';
-import { StateContext } from '../../contexts/StateContext';
 import * as postsService from '../../services/postsService';
 
 import { Loading } from '../Loading/Loading';
 import { Header } from '../Header/Header';
 import { Likes } from './Likes/Likes';
+import { DeleteModal } from '../DeleteModal/DeleteModal';
 import styles from './PostDetails.module.css';
 
 export const PostDetails = () => {
@@ -15,9 +15,9 @@ export const PostDetails = () => {
     const { postId } = useParams();
     const [post, setPost] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const [confirmationModal, setConfirmationModal] = useState(false);
 
     const { userId } = useContext(UserContext);
-    const { onDelete } = useContext(StateContext);
 
     useEffect(() => {
         postsService.getOnePost(postId)
@@ -32,7 +32,7 @@ export const PostDetails = () => {
     };
 
     const onDeleteClick = () => {
-        onDelete(postId);
+        setConfirmationModal(true);
     };
 
     const isOwner = post.owner?.objectId === userId;
@@ -73,6 +73,8 @@ export const PostDetails = () => {
 
                         </div>
                     </article>
+
+                    {confirmationModal && <DeleteModal setConfirmationModal={setConfirmationModal} />}
                 </div>
             )}
         </>

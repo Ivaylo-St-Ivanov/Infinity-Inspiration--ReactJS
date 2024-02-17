@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import styles from '../CatalogPage.module.css';
 
@@ -9,10 +9,16 @@ export const CatalogItem = ({
     author,
     content
 }) => {
+    const navigate = useNavigate();
+
     const text = content?.slice(0, 150) + ' .....';
 
+    const onCardClick = () => {
+        navigate(`/catalog/${objectId}`);
+    };
+
     return (
-        <article className={styles['card']}>
+        <article onClick={onCardClick} className={styles['card']}>
             <div>
                 <Link to={`/catalog/${objectId}`}><img src={imageUrl} alt={title} /></Link>
             </div>
