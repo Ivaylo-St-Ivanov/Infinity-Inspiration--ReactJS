@@ -36,6 +36,7 @@
     border-radius: 18px;
     overflow: hidden;
     margin-bottom: 30px;
+    transition: all 1s ease;
 }
 
 #facts .cards .card:hover {

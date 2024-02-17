@@ -13,9 +13,11 @@
 .aside ul li a i {
     color: blueviolet;
     font-size: 30px;
+    transition: all 1s ease;
 }
 
 .aside ul li a i:hover {
+    transform: rotateY(360deg);
     color: gray;
 }
 

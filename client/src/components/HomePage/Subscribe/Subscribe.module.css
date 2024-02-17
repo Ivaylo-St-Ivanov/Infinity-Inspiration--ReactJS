@@ -23,6 +23,7 @@
 .subscribe .input input {
     width: 70%;
     border: 2px solid black;
+    padding: 3px 6px;
 }
 
 .subscribe .input button {
@@ -30,6 +31,13 @@
     color: #fff;
     padding: 5px 10px;
     cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 1.5s ease;
+}
+
+.subscribe .input button:hover {
+    background-color: white;
+    color: black;
 }
 
 /*---------- Resp ------------*/

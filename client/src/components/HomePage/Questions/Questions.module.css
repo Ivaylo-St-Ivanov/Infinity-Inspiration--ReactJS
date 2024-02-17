@@ -43,7 +43,15 @@
 }
 
 #question .img {
-    padding-left: 10px;
+    margin-left: 10px;
+    border: 5px solid white;
+    box-shadow: 0px 0px 6px black;
+    transition: all 1s ease;
+}
+
+#question .img:hover {
+    transform: scale(1.03);
+    box-shadow: unset;
 }
 
 .more-question {

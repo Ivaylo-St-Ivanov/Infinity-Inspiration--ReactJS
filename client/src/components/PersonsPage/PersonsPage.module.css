@@ -91,6 +91,7 @@
 
 #persons .cards .card {
     width: 15%;
+    transition: all 1s ease;
 }
 
 .persons-page #persons .cards .card {
@@ -98,11 +99,12 @@
 }
 
 #persons .cards .card:hover {
-    width: 17%;
+    /* width: 17%; */
+    transform: scale(1.01);
     border: 2px solid blueviolet;
     padding: 2px;
     cursor: pointer;
-    transition: width 2s, transform 2s;
+    /* transition: width 2s, transform 2s; */
 }
 
 .persons-page #persons .cards .card:hover {

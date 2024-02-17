@@ -12,9 +12,9 @@ export const Navigation = () => {
                 <li className={styles['nav-item']}>
                     <Link to="/persons-page">Incredible Persons</Link>
                 </li>
-                <li className={styles['nav-item']}>
+                {/* <li className={styles['nav-item']}>
                     <Link to="/message">Big Questions</Link>
-                </li>
+                </li> */}
                 <li className={styles['nav-item']}>
                     <Link to="/catalog">Amazing Facts</Link>
                 </li>

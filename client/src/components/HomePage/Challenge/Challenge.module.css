@@ -2,6 +2,7 @@
     position: relative;
     height: 100vh;
     overflow: hidden;
+    box-shadow: 0px 0px 10px black;
 }
 
 .challenge img {
@@ -17,6 +18,11 @@
     top: 0px;
     left: 0px;
     background-color: rgba(0, 0, 0, 0.1);
+    transition: all 1s ease;
+}
+
+.challenge .overlay:hover {
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .challenge .title {
@@ -30,11 +36,13 @@
 .challenge .title h1 {
     font-size: 48px;
     margin-bottom: 30px;
+    text-shadow: 2px 2px 2px black;
 }
 
 .challenge .title p {
     font-size: 26px;
     margin-bottom: 100px;
+    text-shadow: 2px 2px 2px black;
 }
 
 /*---------- Resp ------------*/

@@ -2,6 +2,7 @@
     height: 80vh;
     position: relative;
     z-index: 2;
+    box-shadow: 0px 2px 8px black;
 }
 
 .top-img-container img {
@@ -17,6 +18,11 @@
     top: 0px;
     left: 0px;
     background-color: rgba(0, 0, 0, 0.1);
+    transition: all 0.7s ease;
+}
+
+.top-img-container .overlay:hover {
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .top-img-container .title {
@@ -29,10 +35,12 @@
 .title h1 {
     font-size: 48px;
     font-weight: 900;
+    text-shadow: 2px 2px 2px black;
 }
 
 .title span {
     font-size: 32px;
+    text-shadow: 2px 2px 2px black;
 }
 
 /*---------- Resp ------------*/
