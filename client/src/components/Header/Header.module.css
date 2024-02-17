@@ -13,6 +13,21 @@
 
 .main-header h2 {
     margin-left: 120px;
+    transition: all 1.5s ease;
+}
+
+.main-header h2:hover {
+    transform: scale(1.05);
+}
+
+.main-header .btn-nav {
+    box-shadow: 0 0 10px white;
+    transition: all 1s ease;
+}
+
+.main-header .btn-nav:hover {
+    background-color: unset;
+    color: blueviolet;
 }
 
 /* ------- Navigation -------------*/

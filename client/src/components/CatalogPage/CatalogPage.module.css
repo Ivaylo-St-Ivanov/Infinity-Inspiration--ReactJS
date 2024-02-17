@@ -17,6 +17,10 @@
     margin-bottom: 50px;
 }
 
+#facts .btn-create {
+    transition: all 1s ease;
+}
+
 #facts .cards {
     display: flex;
     flex-wrap: wrap;

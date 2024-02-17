@@ -45,6 +45,11 @@
     text-shadow: 2px 2px 2px black;
 }
 
+.challenge .title .btn-challenge {
+    box-shadow: 0 0 10px white;
+    transition: all 1s ease;
+}
+
 /*---------- Resp ------------*/
 
 @media (max-width: 990px) {
